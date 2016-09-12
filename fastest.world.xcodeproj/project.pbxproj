@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3A4853841CF14B83E5B70EE4 /* Pods_fastest_worldTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA79A3CF4CB89F16B970E4B /* Pods_fastest_worldTests.framework */; };
+		A90B980D1D871DCA0075F342 /* Launch_Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90B980C1D871DCA0075F342 /* Launch_Screen.storyboard */; };
 		A931414E1D84C4F000B4AFBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A931414D1D84C4F000B4AFBE /* AppDelegate.swift */; };
-		A93141501D84C4F000B4AFBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A931414F1D84C4F000B4AFBE /* ViewController.swift */; };
+		A93141501D84C4F000B4AFBE /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A931414F1D84C4F000B4AFBE /* SignInVC.swift */; };
 		A93141531D84C4F000B4AFBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A93141511D84C4F000B4AFBE /* Main.storyboard */; };
 		A93141561D84C4F000B4AFBE /* fastest_world.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A93141541D84C4F000B4AFBE /* fastest_world.xcdatamodeld */; };
 		A93141581D84C4F000B4AFBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A93141571D84C4F000B4AFBE /* Assets.xcassets */; };
-		A931415B1D84C4F000B4AFBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A93141591D84C4F000B4AFBE /* LaunchScreen.storyboard */; };
 		A93141661D84C4F000B4AFBE /* fastest_worldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93141651D84C4F000B4AFBE /* fastest_worldTests.swift */; };
 		A93141711D84CF3F00B4AFBE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A93141701D84CF3F00B4AFBE /* GoogleService-Info.plist */; };
 		A93141721D84CF3F00B4AFBE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A93141701D84CF3F00B4AFBE /* GoogleService-Info.plist */; };
@@ -34,13 +34,13 @@
 		4E897DB94CC83D7791DD8485 /* Pods_fastest_world.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fastest_world.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2C9BD9132011F4CDE44AB3 /* Pods-fastest.worldTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fastest.worldTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-fastest.worldTests/Pods-fastest.worldTests.release.xcconfig"; sourceTree = "<group>"; };
 		6DA79A3CF4CB89F16B970E4B /* Pods_fastest_worldTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fastest_worldTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A90B980C1D871DCA0075F342 /* Launch_Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch_Screen.storyboard; sourceTree = "<group>"; };
 		A931414A1D84C4EF00B4AFBE /* fastest.world.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fastest.world.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A931414D1D84C4F000B4AFBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A931414F1D84C4F000B4AFBE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A931414F1D84C4F000B4AFBE /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		A93141521D84C4F000B4AFBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A93141551D84C4F000B4AFBE /* fastest_world.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = fastest_world.xcdatamodel; sourceTree = "<group>"; };
 		A93141571D84C4F000B4AFBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A931415A1D84C4F000B4AFBE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A931415C1D84C4F000B4AFBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A93141611D84C4F000B4AFBE /* fastest.worldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fastest.worldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93141651D84C4F000B4AFBE /* fastest_worldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fastest_worldTests.swift; sourceTree = "<group>"; };
@@ -111,10 +111,10 @@
 				A931414D1D84C4F000B4AFBE /* AppDelegate.swift */,
 				A93141511D84C4F000B4AFBE /* Main.storyboard */,
 				A93141571D84C4F000B4AFBE /* Assets.xcassets */,
-				A93141591D84C4F000B4AFBE /* LaunchScreen.storyboard */,
 				A931415C1D84C4F000B4AFBE /* Info.plist */,
 				A93141541D84C4F000B4AFBE /* fastest_world.xcdatamodeld */,
 				A93141701D84CF3F00B4AFBE /* GoogleService-Info.plist */,
+				A90B980C1D871DCA0075F342 /* Launch_Screen.storyboard */,
 			);
 			path = fastest.world;
 			sourceTree = "<group>";
@@ -145,7 +145,7 @@
 		A93141761D84D6AC00B4AFBE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A931414F1D84C4F000B4AFBE /* ViewController.swift */,
+				A931414F1D84C4F000B4AFBE /* SignInVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -248,9 +248,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A931415B1D84C4F000B4AFBE /* LaunchScreen.storyboard in Resources */,
 				A93141711D84CF3F00B4AFBE /* GoogleService-Info.plist in Resources */,
 				A93141581D84C4F000B4AFBE /* Assets.xcassets in Resources */,
+				A90B980D1D871DCA0075F342 /* Launch_Screen.storyboard in Resources */,
 				A93141531D84C4F000B4AFBE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,7 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A93141501D84C4F000B4AFBE /* ViewController.swift in Sources */,
+				A93141501D84C4F000B4AFBE /* SignInVC.swift in Sources */,
 				A931414E1D84C4F000B4AFBE /* AppDelegate.swift in Sources */,
 				A93141561D84C4F000B4AFBE /* fastest_world.xcdatamodeld in Sources */,
 			);
@@ -394,14 +394,6 @@
 				A93141521D84C4F000B4AFBE /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A93141591D84C4F000B4AFBE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A931415A1D84C4F000B4AFBE /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
