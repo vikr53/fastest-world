@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 3 Copy 2" translatesAutoresizingMaskIntoConstraints="NO" id="GtC-eJ-6bJ"/>
@@ -31,6 +31,9 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIH-0H-QVR">
                                                 <state key="normal" image="Group 3"/>
+                                                <connections>
+                                                    <segue destination="E9u-zs-Iev" kind="showDetail" id="gm2-rh-NzN"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -55,13 +58,74 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="21.600000000000001" y="33.733133433283363"/>
+            <point key="canvasLocation" x="-72" y="33"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4gk-Eh-iuD">
+            <objects>
+                <viewController id="E9u-zs-Iev" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bbh-ta-LxQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="tm7-Gb-yxm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gcz-bI-doL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rectangle 3 Copy 2" translatesAutoresizingMaskIntoConstraints="NO" id="jyj-JO-Zgp">
+                                <frame key="frameInset" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="qiy-LA-wLx">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 5" translatesAutoresizingMaskIntoConstraints="NO" id="ScI-mV-qIQ"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 4" translatesAutoresizingMaskIntoConstraints="NO" id="xgN-xg-bzz"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" background="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="mjc-Rj-gAq">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="260" id="3Il-HC-lBE"/>
+                                            <constraint firstAttribute="height" constant="40" id="f4u-iP-0pW"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DC4-qU-qKo">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="260" id="pX0-8p-iiK"/>
+                                            <constraint firstAttribute="height" constant="40" id="u0N-yW-Jxs"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lep-IU-xAD">
+                                        <state key="normal" image="Group"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="qiy-LA-wLx" secondAttribute="bottom" id="3mq-kt-VJ6"/>
+                            <constraint firstItem="tm7-Gb-yxm" firstAttribute="top" secondItem="qiy-LA-wLx" secondAttribute="bottom" constant="10" id="DBF-KX-fVW"/>
+                            <constraint firstItem="qiy-LA-wLx" firstAttribute="top" secondItem="Bbh-ta-LxQ" secondAttribute="bottom" constant="60" id="cSq-hD-dAU"/>
+                            <constraint firstAttribute="trailing" secondItem="qiy-LA-wLx" secondAttribute="trailing" id="fIm-CJ-8Qp"/>
+                            <constraint firstItem="qiy-LA-wLx" firstAttribute="leading" secondItem="Gcz-bI-doL" secondAttribute="leading" id="lih-qp-3Sw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f3T-E2-HMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="674.39999999999998" y="31.934032983508249"/>
         </scene>
     </scenes>
     <resources>
         <image name="Bitmap" width="101" height="101"/>
+        <image name="Group" width="195" height="61"/>
         <image name="Group 3" width="101" height="101"/>
+        <image name="Group 4" width="298" height="13"/>
         <image name="Group 5" width="375" height="128"/>
+        <image name="Logo" width="128" height="128"/>
         <image name="Rectangle 3 Copy 2" width="374" height="667"/>
         <image name="fastest &lt;.world&gt;" width="241" height="68"/>
         <image name="login_x_bar" width="292" height="13"/>
