@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11156"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 3 Copy 2" translatesAutoresizingMaskIntoConstraints="NO" id="GtC-eJ-6bJ"/>
@@ -69,7 +70,7 @@
                         <viewControllerLayoutGuide type="bottom" id="tm7-Gb-yxm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Gcz-bI-doL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Rectangle 3 Copy 2" translatesAutoresizingMaskIntoConstraints="NO" id="jyj-JO-Zgp">
@@ -103,10 +104,18 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z0H-lb-ajy">
+                                <state key="normal" image="&lt;BACK"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" animates="NO" action="showDetailViewController:sender:" id="lN1-6n-nS4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Z0H-lb-ajy" firstAttribute="leading" secondItem="Gcz-bI-doL" secondAttribute="leadingMargin" constant="6" id="2jK-wT-8Vn"/>
                             <constraint firstAttribute="bottom" secondItem="qiy-LA-wLx" secondAttribute="bottom" id="3mq-kt-VJ6"/>
+                            <constraint firstItem="Z0H-lb-ajy" firstAttribute="top" secondItem="Bbh-ta-LxQ" secondAttribute="bottom" constant="12" id="CUw-IY-WLd"/>
                             <constraint firstItem="tm7-Gb-yxm" firstAttribute="top" secondItem="qiy-LA-wLx" secondAttribute="bottom" constant="10" id="DBF-KX-fVW"/>
                             <constraint firstItem="qiy-LA-wLx" firstAttribute="top" secondItem="Bbh-ta-LxQ" secondAttribute="bottom" constant="60" id="cSq-hD-dAU"/>
                             <constraint firstAttribute="trailing" secondItem="qiy-LA-wLx" secondAttribute="trailing" id="fIm-CJ-8Qp"/>
@@ -116,10 +125,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f3T-E2-HMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="674.39999999999998" y="31.934032983508249"/>
+            <point key="canvasLocation" x="806" y="33"/>
         </scene>
     </scenes>
     <resources>
+        <image name="&lt;BACK" width="66" height="13"/>
         <image name="Bitmap" width="101" height="101"/>
         <image name="Group" width="195" height="61"/>
         <image name="Group 3" width="101" height="101"/>
