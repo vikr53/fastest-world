@@ -17,11 +17,53 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 3 Copy 2" translatesAutoresizingMaskIntoConstraints="NO" id="GtC-eJ-6bJ"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="54" translatesAutoresizingMaskIntoConstraints="NO" id="sSi-Bs-6CU">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 5" translatesAutoresizingMaskIntoConstraints="NO" id="VMf-2E-bsv"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fastest &lt;.world&gt;" translatesAutoresizingMaskIntoConstraints="NO" id="KXQ-TU-E5J"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_x_bar" translatesAutoresizingMaskIntoConstraints="NO" id="i7f-vF-T2a"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="-61" translatesAutoresizingMaskIntoConstraints="NO" id="Jh1-Qg-0t6">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQ9-cq-d5V">
+                                                <state key="normal" image="Bitmap"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIH-0H-QVR">
+                                                <state key="normal" image="Group 3"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GtC-eJ-6bJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6dZ-rc-bQY"/>
+                            <constraint firstItem="sSi-Bs-6CU" firstAttribute="trailing" secondItem="GtC-eJ-6bJ" secondAttribute="trailing" id="8TP-me-XKC"/>
+                            <constraint firstAttribute="trailing" secondItem="GtC-eJ-6bJ" secondAttribute="trailing" id="FrD-i4-FRU"/>
+                            <constraint firstItem="GtC-eJ-6bJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Gur-eH-qKp"/>
+                            <constraint firstItem="sSi-Bs-6CU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IEJ-19-57o"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sSi-Bs-6CU" secondAttribute="bottom" id="N4c-lb-Hj5"/>
+                            <constraint firstItem="sSi-Bs-6CU" firstAttribute="leading" secondItem="GtC-eJ-6bJ" secondAttribute="leading" id="WYL-Rc-eRY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sSi-Bs-6CU" secondAttribute="bottom" constant="10" id="gVE-t7-cMo"/>
+                            <constraint firstItem="sSi-Bs-6CU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="60" id="iWl-hr-vh2"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GtC-eJ-6bJ" secondAttribute="bottom" id="rz8-HC-I01"/>
+                            <constraint firstAttribute="trailing" secondItem="sSi-Bs-6CU" secondAttribute="trailing" id="wfh-Fe-SJy"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="21.600000000000001" y="33.733133433283363"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Bitmap" width="101" height="101"/>
+        <image name="Group 3" width="101" height="101"/>
+        <image name="Group 5" width="375" height="128"/>
+        <image name="Rectangle 3 Copy 2" width="374" height="667"/>
+        <image name="fastest &lt;.world&gt;" width="241" height="68"/>
+        <image name="login_x_bar" width="292" height="13"/>
+    </resources>
 </document>
