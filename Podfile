@@ -9,6 +9,8 @@ target 'fastest.world' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'FBSDKLoginKit'
+
 
   target 'fastest.worldTests' do
     inherit! :search_paths

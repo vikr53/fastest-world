@@ -29,6 +29,9 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQ9-cq-d5V">
                                                 <state key="normal" image="Bitmap"/>
+                                                <connections>
+                                                    <action selector="facebookBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OdU-hr-q41"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIH-0H-QVR">
                                                 <state key="normal" image="Group 3"/>
@@ -48,7 +51,6 @@
                             <constraint firstAttribute="trailing" secondItem="GtC-eJ-6bJ" secondAttribute="trailing" id="FrD-i4-FRU"/>
                             <constraint firstItem="GtC-eJ-6bJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Gur-eH-qKp"/>
                             <constraint firstItem="sSi-Bs-6CU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IEJ-19-57o"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sSi-Bs-6CU" secondAttribute="bottom" id="N4c-lb-Hj5"/>
                             <constraint firstItem="sSi-Bs-6CU" firstAttribute="leading" secondItem="GtC-eJ-6bJ" secondAttribute="leading" id="WYL-Rc-eRY"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sSi-Bs-6CU" secondAttribute="bottom" constant="10" id="gVE-t7-cMo"/>
                             <constraint firstItem="sSi-Bs-6CU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="60" id="iWl-hr-vh2"/>
@@ -79,12 +81,8 @@
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="qiy-LA-wLx">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Group 5" translatesAutoresizingMaskIntoConstraints="NO" id="ScI-mV-qIQ">
-                                        <frame key="frameInset" width="375" height="159"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="Group 4" translatesAutoresizingMaskIntoConstraints="NO" id="xgN-xg-bzz">
-                                        <frame key="frameInset" minX="39" minY="188" width="298" height="13"/>
-                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="Group 5" translatesAutoresizingMaskIntoConstraints="NO" id="ScI-mV-qIQ"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 4" translatesAutoresizingMaskIntoConstraints="NO" id="xgN-xg-bzz"/>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" background="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="mjc-Rj-gAq">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="260" id="3Il-HC-lBE"/>
@@ -101,7 +99,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lep-IU-xAD">
                                         <constraints>
@@ -158,7 +156,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 3 Copy 2" translatesAutoresizingMaskIntoConstraints="NO" id="SxN-L7-c7s"/>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="XaK-cV-wz1">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmailSignin" translatesAutoresizingMaskIntoConstraints="NO" id="PtJ-tF-QyT"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmailSignUp" translatesAutoresizingMaskIntoConstraints="NO" id="PtJ-tF-QyT"/>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w00-7Q-L1h">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="6fQ-uq-4eT"/>
@@ -184,7 +182,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="geg-RW-hBG">
                                         <constraints>
@@ -193,7 +191,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SignUp Btn" translatesAutoresizingMaskIntoConstraints="NO" id="af3-Mh-8eD"/>
                                 </subviews>
@@ -221,14 +219,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yx3-PN-cAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1873" y="33"/>
+            <point key="canvasLocation" x="1670" y="33"/>
         </scene>
     </scenes>
     <resources>
         <image name="&lt;HOME" width="67" height="13"/>
         <image name="&lt;LOGIN" width="81" height="13"/>
         <image name="Bitmap" width="101" height="101"/>
-        <image name="EmailSignin" width="298" height="13"/>
+        <image name="EmailSignUp" width="296" height="13"/>
         <image name="Group" width="195" height="61"/>
         <image name="Group 3" width="101" height="101"/>
         <image name="Group 4" width="298" height="13"/>
@@ -240,6 +238,6 @@
         <image name="login_x_bar" width="292" height="13"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="j39-OD-CQp"/>
+        <segue reference="gm2-rh-NzN"/>
     </inferredMetricsTieBreakers>
 </document>

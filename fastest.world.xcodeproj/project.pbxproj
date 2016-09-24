@@ -48,6 +48,7 @@
 		A93141651D84C4F000B4AFBE /* fastest_worldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fastest_worldTests.swift; sourceTree = "<group>"; };
 		A93141671D84C4F000B4AFBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A93141701D84CF3F00B4AFBE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A97670AA1D965DCE001CD254 /* fastest.world.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = fastest.world.entitlements; sourceTree = "<group>"; };
 		AFE47FD24EB60123982D83B0 /* Pods-fastest.world.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fastest.world.release.xcconfig"; path = "Pods/Target Support Files/Pods-fastest.world/Pods-fastest.world.release.xcconfig"; sourceTree = "<group>"; };
 		C554EB7B0B26E6ECECE71E2F /* Pods-fastest.worldTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fastest.worldTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fastest.worldTests/Pods-fastest.worldTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EA4899411054106D1F0B7FBA /* Pods-fastest.world.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fastest.world.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fastest.world/Pods-fastest.world.debug.xcconfig"; sourceTree = "<group>"; };
@@ -107,6 +108,7 @@
 		A931414C1D84C4EF00B4AFBE /* fastest.world */ = {
 			isa = PBXGroup;
 			children = (
+				A97670AA1D965DCE001CD254 /* fastest.world.entitlements */,
 				A93141731D84D67C00B4AFBE /* Model */,
 				A93141761D84D6AC00B4AFBE /* Controller */,
 				A93141751D84D69D00B4AFBE /* View */,
@@ -218,7 +220,13 @@
 				TargetAttributes = {
 					A93141491D84C4EF00B4AFBE = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = F528DKCBCX;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					A93141601D84C4F000B4AFBE = {
 						CreatedOnToolsVersion = 8.0;
@@ -501,6 +509,8 @@
 			baseConfigurationReference = EA4899411054106D1F0B7FBA /* Pods-fastest.world.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = fastest.world/fastest.world.entitlements;
+				DEVELOPMENT_TEAM = F528DKCBCX;
 				INFOPLIST_FILE = fastest.world/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.fastest-world";
@@ -514,6 +524,8 @@
 			baseConfigurationReference = AFE47FD24EB60123982D83B0 /* Pods-fastest.world.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = fastest.world/fastest.world.entitlements;
+				DEVELOPMENT_TEAM = F528DKCBCX;
 				INFOPLIST_FILE = fastest.world/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.example.fastest-world";
