@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="-72" y="33"/>
         </scene>
-        <!--View Controller-->
+        <!--Email Sign InVC-->
         <scene sceneID="4gk-Eh-iuD">
             <objects>
-                <viewController id="E9u-zs-Iev" sceneMemberID="viewController">
+                <viewController id="E9u-zs-Iev" customClass="EmailSignInVC" customModule="fastest_world" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bbh-ta-LxQ"/>
                         <viewControllerLayoutGuide type="bottom" id="tm7-Gb-yxm"/>
@@ -106,6 +106,9 @@
                                             <constraint firstAttribute="height" constant="80" id="JIY-zq-bfg"/>
                                         </constraints>
                                         <state key="normal" image="Group"/>
+                                        <connections>
+                                            <action selector="emailSignInTapped:" destination="E9u-zs-Iev" eventType="touchUpInside" id="GTH-mv-2Xq"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XST-w2-TJY">
                                         <constraints>
@@ -136,6 +139,10 @@
                             <constraint firstItem="qiy-LA-wLx" firstAttribute="leading" secondItem="Gcz-bI-doL" secondAttribute="leading" id="lih-qp-3Sw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="mjc-Rj-gAq" id="f8i-zB-O4j"/>
+                        <outlet property="pwdField" destination="DC4-qU-qKo" id="eNu-Zf-3Ye"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f3T-E2-HMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
