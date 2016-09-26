@@ -10,6 +10,7 @@ target 'fastest.world' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'FBSDKLoginKit'
+  pod 'SwiftKeychainWrapper'
 
 
   target 'fastest.worldTests' do

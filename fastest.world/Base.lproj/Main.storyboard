@@ -58,10 +58,13 @@
                             <constraint firstAttribute="trailing" secondItem="sSi-Bs-6CU" secondAttribute="trailing" id="wfh-Fe-SJy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="9oX-75-HHE" kind="show" identifier="goToHome" id="sEQ-Zk-ox5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-72" y="33"/>
+            <point key="canvasLocation" x="-74" y="33"/>
         </scene>
         <!--Email Sign InVC-->
         <scene sceneID="4gk-Eh-iuD">
@@ -142,16 +145,50 @@
                     <connections>
                         <outlet property="emailField" destination="mjc-Rj-gAq" id="f8i-zB-O4j"/>
                         <outlet property="pwdField" destination="DC4-qU-qKo" id="eNu-Zf-3Ye"/>
+                        <segue destination="9oX-75-HHE" kind="show" identifier="goToHome" id="IH0-ni-8La"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f3T-E2-HMF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="806" y="33"/>
         </scene>
-        <!--View Controller-->
+        <!--HomeVC-->
+        <scene sceneID="nYr-7v-nbt">
+            <objects>
+                <viewController id="9oX-75-HHE" customClass="HomeVC" customModule="fastest_world" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7HS-bV-M3h"/>
+                        <viewControllerLayoutGuide type="bottom" id="xGY-4F-boQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I9I-Gu-X33">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqI-HK-KNl">
+                                <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="signOutTapped:" destination="9oX-75-HHE" eventType="touchUpInside" id="XXX-yx-Dz5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97019014782156432" green="1" blue="0.37276394128054102" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="tqI-HK-KNl" firstAttribute="centerX" secondItem="I9I-Gu-X33" secondAttribute="centerX" id="YAS-87-Gkb"/>
+                            <constraint firstItem="tqI-HK-KNl" firstAttribute="centerY" secondItem="I9I-Gu-X33" secondAttribute="centerY" id="taM-MY-T1q"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="Ocl-33-JZp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yfD-2X-e0E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="321" y="1011"/>
+        </scene>
+        <!--Email Sign UpVC-->
         <scene sceneID="jLB-MZ-WQm">
             <objects>
-                <viewController id="vFf-Li-IpU" sceneMemberID="viewController">
+                <viewController id="vFf-Li-IpU" customClass="EmailSignUpVC" customModule="fastest_world" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3yF-zy-n3o"/>
                         <viewControllerLayoutGuide type="bottom" id="5jH-rf-eKF"/>
@@ -200,7 +237,12 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SignUp Btn" translatesAutoresizingMaskIntoConstraints="NO" id="af3-Mh-8eD"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4a5-nP-Dpn">
+                                        <state key="normal" image="SignUp Btn"/>
+                                        <connections>
+                                            <action selector="signUpBtnTapped:" destination="vFf-Li-IpU" eventType="touchUpInside" id="BaO-ch-EZG"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fA-92-7g7">
@@ -223,10 +265,16 @@
                             <constraint firstItem="SxN-L7-c7s" firstAttribute="top" secondItem="Vim-Id-HdQ" secondAttribute="top" id="wQw-5R-XYO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="Kc0-P2-QSF" id="yc3-rZ-CXT"/>
+                        <outlet property="pwdConfirmField" destination="geg-RW-hBG" id="CQ6-b0-huy"/>
+                        <outlet property="pwdField" destination="WyY-OE-FO4" id="KCh-kk-7V5"/>
+                        <outlet property="usernameField" destination="w00-7Q-L1h" id="BKf-OE-nR0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yx3-PN-cAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1670" y="33"/>
+            <point key="canvasLocation" x="1572" y="23"/>
         </scene>
     </scenes>
     <resources>
@@ -246,5 +294,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gm2-rh-NzN"/>
+        <segue reference="Ocl-33-JZp"/>
+        <segue reference="IH0-ni-8La"/>
     </inferredMetricsTieBreakers>
 </document>

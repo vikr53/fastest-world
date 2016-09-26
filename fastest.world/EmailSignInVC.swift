@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-import FirebaseAuth
+import SwiftKeychainWrapper
 
 class EmailSignInVC: UIViewController {
     
@@ -23,32 +23,76 @@ class EmailSignInVC: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        if let _ = KeychainWrapper.defaultKeychainWrapper().stringForKey(KEY_UID) {
+            print("VIK: Found ID in keychain")
+            performSegue(withIdentifier: "goToHome", sender: nil)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
+        
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func emailSignInTapped(_ sender: AnyObject) {
-        if let email = emailField.text, let pwd = pwdField.text {
-            FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
-                /* User signed in successfully*/
-                if error == nil {
-                    print("VIK: User authenticated with Firebase")
-                } else {
-                    print(error)
-                    /* Creating an account if it does not exist */
-                    FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
-                        if error != nil {
-                            print("VIK: Unable to create an account \(error)")
-                        } else {
-                            print("VIK: Successfully authenticated with Firebase using email")
-                        }
-                    })
-                }
-            })
-        }
+    func pwdtextFieldDidChange (_ textField: UITextField){
+        
+        textField.layer.borderColor = nil
+        textField.backgroundColor = nil
+        textField.textColor = UIColor.black
+        textField.layer.borderWidth = 0.0
+        
+        
+        //change email text field
+        self.emailField.layer.borderColor = nil
+        self.emailField.backgroundColor = nil
+        self.emailField.textColor = UIColor.black
+        self.emailField.layer.borderWidth = 0.0
+        
     }
 
+    func emailtextFieldDidChange (_ textField: UITextField){
+        
+        textField.layer.borderColor = nil
+        textField.backgroundColor = nil
+        textField.textColor = UIColor.black
+        textField.layer.borderWidth = 0.0
+        
+        
+        //change email text field
+        self.pwdField.layer.borderColor = nil
+        self.pwdField.backgroundColor = nil
+        self.pwdField.textColor = UIColor.black
+        self.pwdField.layer.borderWidth = 0.0
+        
+    }
+    
+    @IBAction func emailSignInTapped(_ sender: AnyObject) {
+
+        FIRAuth.auth()?.signIn(withEmail: self.emailField.text!, password: self.pwdField.text!) { (user, error) in
+            if error != nil {
+                self.changeField(textField: self.pwdField)
+                self.changeField(textField: self.emailField)
+                
+                //Password Field Changed
+                self.pwdField.addTarget(self, action: #selector(EmailSignInVC.pwdtextFieldDidChange(_:)), for: UIControlEvents.editingChanged)
+                
+                //Email Field Changed
+                self.emailField.addTarget(self, action: #selector(EmailSignInVC.emailtextFieldDidChange(_:)), for: UIControlEvents.editingChanged)
+                
+                print("VIK: Error Loging into fastest-world. May be because of the following reasons \n 1. Password is wrong 2. Email is of invalid type 3. Error connecting to and authenticating with Firebase")
+            } else {
+                print("VIK: Successfully autheticated with Firebase")
+                if let user = user {
+                   self.completeSignIn(id: user.uid)
+                }
+            }
+        }
+
+        
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -58,5 +102,19 @@ class EmailSignInVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func completeSignIn(id: String) {
+        let keychainResult = KeychainWrapper.defaultKeychainWrapper().setString(id, forKey: KEY_UID)
+        print("VIK: Data saved to keychain \(keychainResult)")
+        performSegue(withIdentifier: "goToHome", sender: nil)
+    }
+    
+    func changeField (textField: UITextField) {
+        textField.layer.borderColor = UIColor.red.cgColor
+        textField.layer.borderWidth = 2.0
+        textField.layer.cornerRadius = 5.0
+        textField.backgroundColor = UIColor(red:1.00, green:0.30, blue:0.30, alpha:1.0)
+        textField.textColor = UIColor.white
+    }
 
 }
