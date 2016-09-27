@@ -201,15 +201,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="XaK-cV-wz1">
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmailSignUp" translatesAutoresizingMaskIntoConstraints="NO" id="PtJ-tF-QyT"/>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w00-7Q-L1h">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="6fQ-uq-4eT"/>
-                                            <constraint firstAttribute="width" constant="260" id="j4N-AI-sO8"/>
-                                        </constraints>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mrm-vR-vOE">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" background="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Kc0-P2-QSF">
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="2cv-wy-Z3S"/>
@@ -267,9 +263,10 @@
                     </view>
                     <connections>
                         <outlet property="emailField" destination="Kc0-P2-QSF" id="yc3-rZ-CXT"/>
+                        <outlet property="errorMessage" destination="Mrm-vR-vOE" id="mJw-Zu-HZB"/>
                         <outlet property="pwdConfirmField" destination="geg-RW-hBG" id="CQ6-b0-huy"/>
                         <outlet property="pwdField" destination="WyY-OE-FO4" id="KCh-kk-7V5"/>
-                        <outlet property="usernameField" destination="w00-7Q-L1h" id="BKf-OE-nR0"/>
+                        <segue destination="9oX-75-HHE" kind="show" identifier="goToHome" id="ifb-s9-OTJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yx3-PN-cAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -295,6 +292,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="gm2-rh-NzN"/>
         <segue reference="Ocl-33-JZp"/>
-        <segue reference="IH0-ni-8La"/>
+        <segue reference="sEQ-Zk-ox5"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -55,13 +55,16 @@ class SignInVC: UIViewController {
             } else {
                 print("VIK: Successfully authenticated with Firebase")
                 if let user = user {
-                    self.completeSignIn(id: user.uid)
+                    let userData = ["uname": user.displayName!, "provider": credential.provider]
+                    self.completeSignIn(id: user.uid, userData: userData)
                 }
             }
         })
     }
     
-    func completeSignIn(id: String) {
+    func completeSignIn(id: String, userData: Dictionary<String, String> ) {
+        DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
+        
         let keychainResult = KeychainWrapper.defaultKeychainWrapper().setString(id, forKey: KEY_UID)
         print("VIK: Data saved to keychain \(keychainResult)")
         performSegue(withIdentifier: "goToHome", sender: nil)
