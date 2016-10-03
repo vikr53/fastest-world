@@ -22,7 +22,6 @@ class EmailSignUpVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -92,7 +91,14 @@ class EmailSignUpVC: UIViewController {
         DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
         let keychainResult = KeychainWrapper.defaultKeychainWrapper().setString(id, forKey: KEY_UID)
         print("VIK: Data saved to keychain \(keychainResult)")
-        performSegue(withIdentifier: "goToHome", sender: nil)
+        
+        /* The following pulls up the popup to set username*/
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbUnamePopUpID") as! UnamePopUpVC
+        print(popOverVC)
+        print(self.addChildViewController(popOverVC))
+        popOverVC.view.frame = self.view.frame
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMove(toParentViewController: self)
     }
     
     func createErrorMessage(error: String) {

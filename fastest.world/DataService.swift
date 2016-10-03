@@ -29,18 +29,24 @@ class DataService {
     func createFirebaseDBUser(uid: String, userData: Dictionary<String, String>) {
         REF_USERS.child(uid).updateChildValues(userData)
     }
+
+    func updateFirebaseDBUser(uid: String, userData: Dictionary<String, String>) {
+        REF_USERS.child(uid).updateChildValues(userData)
+    }
     
-    func doesUsernameExist(username: String) -> Bool {
-        var exist = true
+    /*func doesUsernameExist(username: String) -> Bool {
+        var exist: Bool = true
         print("VIK: Arrived at exist")
         _REF_USERS.queryOrdered(byChild: "uname").queryEqual(toValue: username).observeSingleEvent(of: .value, with: { snapshot in
+            print("VIK: entered")
             if snapshot.exists() == true {
                 print("VIK: snapshot exists")
             } else {
                 print("VIK: snapshot does not exist")
-                exist = false
+                exist =
             }
         })
+        print("exist var value: \(exist)")
         return exist
-    }
+    }*/
 }

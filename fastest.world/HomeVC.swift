@@ -11,9 +11,20 @@ import Firebase
 import SwiftKeychainWrapper
 
 class HomeVC: UIViewController {
+    
+    private var uname = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        let ref : FIRDatabaseReference = FIRDatabase.database().reference().child("users").child(uid!)
+        
+        //Set Title - Username
+        ref.observeSingleEvent(of: .value, with: { snapshot in
+            uname = snapshot.value["uname"]
+        })
+        
 
         // Do any additional setup after loading the view.
     }

@@ -30,6 +30,10 @@ class SignInVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func buttonTapped(_ sender: AnyObject) {
+        performSegue(withIdentifier: "goToSetUname", sender: nil)
+    }
+    
     @IBAction func facebookBtnTapped(_ sender: AnyObject) {
         
         let facebookLogin = FBSDKLoginManager()
@@ -67,7 +71,14 @@ class SignInVC: UIViewController {
         
         let keychainResult = KeychainWrapper.defaultKeychainWrapper().setString(id, forKey: KEY_UID)
         print("VIK: Data saved to keychain \(keychainResult)")
-        performSegue(withIdentifier: "goToHome", sender: nil)
+        
+        /* The following pulls up the popup to set username*/
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbUnamePopUpID") as! UnamePopUpVC
+        print(popOverVC)
+        print(self.addChildViewController(popOverVC))
+        popOverVC.view.frame = self.view.frame
+        self.view.addSubview(popOverVC.view)
+        popOverVC.didMove(toParentViewController: self)
     }
 
 }
