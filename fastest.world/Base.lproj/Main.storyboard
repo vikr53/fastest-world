@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sSi-Bs-6CU">
@@ -109,7 +109,7 @@
                         <viewControllerLayoutGuide type="bottom" id="tm7-Gb-yxm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Gcz-bI-doL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="qiy-LA-wLx">
@@ -191,7 +191,7 @@
                         <viewControllerLayoutGuide type="bottom" id="xGY-4F-boQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="I9I-Gu-X33">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GMZ-45-azz" customClass="GenElement" customModule="fastest_world" customModuleProvider="target">
@@ -202,11 +202,6 @@
                                             <constraint firstAttribute="height" constant="60" id="d68-GA-znG"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fastman234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWY-B2-6Cs">
-                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="19"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqI-HK-KNl">
                                         <frame key="frameInset" minX="290" minY="30" width="60" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -215,14 +210,19 @@
                                             <action selector="signOutTapped:" destination="9oX-75-HHE" eventType="touchUpInside" id="XXX-yx-Dz5"/>
                                         </connections>
                                     </button>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fastman234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pya-wi-hcG">
+                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99607843137254903" green="0.91764705882352937" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="gWY-B2-6Cs" firstAttribute="centerX" secondItem="GMZ-45-azz" secondAttribute="centerX" id="cMs-a0-qTJ"/>
+                                    <constraint firstItem="Pya-wi-hcG" firstAttribute="top" secondItem="GMZ-45-azz" secondAttribute="top" constant="43" id="JvC-G7-Qut"/>
                                     <constraint firstItem="VQy-Ww-RdY" firstAttribute="top" secondItem="GMZ-45-azz" secondAttribute="top" constant="22" id="dWY-cH-Dbp"/>
                                     <constraint firstItem="VQy-Ww-RdY" firstAttribute="leading" secondItem="GMZ-45-azz" secondAttribute="leading" constant="8" id="h8m-iS-JAG"/>
                                     <constraint firstAttribute="height" constant="85" id="hT4-co-xcm"/>
-                                    <constraint firstItem="gWY-B2-6Cs" firstAttribute="top" secondItem="GMZ-45-azz" secondAttribute="top" constant="42" id="uaQ-YA-FaM"/>
+                                    <constraint firstItem="Pya-wi-hcG" firstAttribute="centerX" secondItem="GMZ-45-azz" secondAttribute="centerX" id="zMz-sc-psU"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3S-as-6C2" customClass="GenElement" customModule="fastest_world" customModuleProvider="target">
@@ -262,7 +262,7 @@
                                                 <color key="textColor" red="0.99607843139999996" green="0.91764705879999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.053" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4y6-c4-osY">
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.053" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4y6-c4-osY">
                                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="43"/>
                                                 <color key="textColor" red="0.99607843139999996" green="0.91764705879999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -381,12 +381,15 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bestTimeLabel" destination="4y6-c4-osY" id="v4e-x3-QOp"/>
+                        <outlet property="rankLabel" destination="6t1-Ra-r2z" id="HFU-db-4jq"/>
+                        <outlet property="unameLabel" destination="Pya-wi-hcG" id="6cI-2E-48U"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="Ocl-33-JZp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfD-2X-e0E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="668" y="1408"/>
+            <point key="canvasLocation" x="-76" y="1166"/>
         </scene>
         <!--Uname Pop UpVC-->
         <scene sceneID="HCE-Ym-8pZ">
@@ -397,7 +400,7 @@
                         <viewControllerLayoutGuide type="bottom" id="1Hu-2L-Ohr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5JZ-0L-nQG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E5j-Bc-rnf" customClass="RoundedCornerView" customModule="fastest_world" customModuleProvider="target">
@@ -487,7 +490,7 @@
                         <viewControllerLayoutGuide type="bottom" id="5jH-rf-eKF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Vim-Id-HdQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="XaK-cV-wz1">
@@ -582,8 +585,8 @@
         <image name="yellowDot" width="110" height="110"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Ocl-33-JZp"/>
+        <segue reference="sEQ-Zk-ox5"/>
         <segue reference="gm2-rh-NzN"/>
-        <segue reference="lN1-6n-nS4"/>
-        <segue reference="CT4-Hl-PLC"/>
     </inferredMetricsTieBreakers>
 </document>

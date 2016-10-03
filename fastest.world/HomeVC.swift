@@ -11,18 +11,36 @@ import Firebase
 import SwiftKeychainWrapper
 
 class HomeVC: UIViewController {
-    
-    private var uname = ""
+
+    @IBOutlet weak var unameLabel: UILabel!
+    @IBOutlet weak var bestTimeLabel: UILabel!
+    @IBOutlet weak var rankLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let uid = FIRAuth.auth()?.currentUser?.uid
-        let ref : FIRDatabaseReference = FIRDatabase.database().reference().child("users").child(uid!)
+        let refSpecificUser : FIRDatabaseReference = FIRDatabase.database().reference().child("users").child(uid!)
+        let refUser : FIRDatabaseReference = FIRDatabase.database().reference().child("users")
         
-        //Set Title - Username
-        ref.observeSingleEvent(of: .value, with: { snapshot in
-            uname = snapshot.value["uname"]
+        //Set Title - Username, Best Time, Rank
+        refSpecificUser.observeSingleEvent(of: .value, with: { snapshot in
+            let username = snapshot.value?["uname"] as? String
+            let bestTime = snapshot.value?["bestTime"] as? String
+            
+            //Setting Title - Username
+            self.unameLabel.text = username!
+            self.unameLabel.isHidden = false
+            
+            //Setting Best Time
+            //self.bestTimeLabel.text = bestTime!
+            //self.bestTimeLabel.isHidden = false
+            
+            //Setting Rank - Another call to db?
+            //refUser.observeSingleEvent(of: .value, with: { snapshot in
+                
+           // })
+            
         })
         
 

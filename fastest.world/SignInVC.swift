@@ -67,11 +67,12 @@ class SignInVC: UIViewController {
     }
     
     func completeSignIn(id: String, userData: Dictionary<String, String> ) {
+        //Check if current user exists in db
         DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
         
         let keychainResult = KeychainWrapper.defaultKeychainWrapper().setString(id, forKey: KEY_UID)
         print("VIK: Data saved to keychain \(keychainResult)")
-        
+
         /* The following pulls up the popup to set username*/
         let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbUnamePopUpID") as! UnamePopUpVC
         print(popOverVC)

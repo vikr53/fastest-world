@@ -19,10 +19,10 @@
 		A93141711D84CF3F00B4AFBE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A93141701D84CF3F00B4AFBE /* GoogleService-Info.plist */; };
 		A93141721D84CF3F00B4AFBE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A93141701D84CF3F00B4AFBE /* GoogleService-Info.plist */; };
 		A93BA46E1DA0615C00719710 /* GenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93BA46D1DA0615C00719710 /* GenElement.swift */; };
+		A950827F1DA1F1230031E69F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A950827E1DA1F1230031E69F /* HomeVC.swift */; };
 		A97670AC1D96621E001CD254 /* EmailSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97670AB1D96621E001CD254 /* EmailSignInVC.swift */; };
 		A97670B01D98A623001CD254 /* EmailSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97670AF1D98A623001CD254 /* EmailSignUpVC.swift */; };
 		A97670B31D98BD90001CD254 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97670B21D98BD90001CD254 /* Constants.swift */; };
-		A97670B51D98C53B001CD254 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97670B41D98C53B001CD254 /* HomeVC.swift */; };
 		A97670B81D990BE7001CD254 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97670B71D990BE7001CD254 /* DataService.swift */; };
 		A9A9C84F1DA1738E00B7E71E /* UnamePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A9C84E1DA1738D00B7E71E /* UnamePopUpVC.swift */; };
 		A9C359CB1DA188FC00389C3B /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C359CA1DA188FC00389C3B /* TestViewController.swift */; };
@@ -57,11 +57,11 @@
 		A93141671D84C4F000B4AFBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A93141701D84CF3F00B4AFBE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A93BA46D1DA0615C00719710 /* GenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenElement.swift; sourceTree = "<group>"; };
+		A950827E1DA1F1230031E69F /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		A97670AA1D965DCE001CD254 /* fastest.world.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = fastest.world.entitlements; sourceTree = "<group>"; };
 		A97670AB1D96621E001CD254 /* EmailSignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignInVC.swift; sourceTree = "<group>"; };
 		A97670AF1D98A623001CD254 /* EmailSignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignUpVC.swift; sourceTree = "<group>"; };
 		A97670B21D98BD90001CD254 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		A97670B41D98C53B001CD254 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		A97670B71D990BE7001CD254 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		A9A9C84E1DA1738D00B7E71E /* UnamePopUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnamePopUpVC.swift; sourceTree = "<group>"; };
 		A9C359CA1DA188FC00389C3B /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
@@ -169,10 +169,10 @@
 		A93141761D84D6AC00B4AFBE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A950827E1DA1F1230031E69F /* HomeVC.swift */,
 				A931414F1D84C4F000B4AFBE /* SignInVC.swift */,
 				A97670AB1D96621E001CD254 /* EmailSignInVC.swift */,
 				A97670AF1D98A623001CD254 /* EmailSignUpVC.swift */,
-				A97670B41D98C53B001CD254 /* HomeVC.swift */,
 				A9A9C84E1DA1738D00B7E71E /* UnamePopUpVC.swift */,
 				A9C359CA1DA188FC00389C3B /* TestViewController.swift */,
 			);
@@ -419,13 +419,13 @@
 				A93BA46E1DA0615C00719710 /* GenElement.swift in Sources */,
 				A97670B01D98A623001CD254 /* EmailSignUpVC.swift in Sources */,
 				A9C359CB1DA188FC00389C3B /* TestViewController.swift in Sources */,
-				A97670B51D98C53B001CD254 /* HomeVC.swift in Sources */,
 				A93141501D84C4F000B4AFBE /* SignInVC.swift in Sources */,
 				A931414E1D84C4F000B4AFBE /* AppDelegate.swift in Sources */,
 				A93141561D84C4F000B4AFBE /* fastest_world.xcdatamodeld in Sources */,
 				A9A9C84F1DA1738E00B7E71E /* UnamePopUpVC.swift in Sources */,
 				A97670AC1D96621E001CD254 /* EmailSignInVC.swift in Sources */,
 				A97670B31D98BD90001CD254 /* Constants.swift in Sources */,
+				A950827F1DA1F1230031E69F /* HomeVC.swift in Sources */,
 				A97670B81D990BE7001CD254 /* DataService.swift in Sources */,
 				A907A5AB1DA1D1F900192DBD /* RoundedCornerView.swift in Sources */,
 			);
