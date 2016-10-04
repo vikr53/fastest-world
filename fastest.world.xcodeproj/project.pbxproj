@@ -10,6 +10,7 @@
 		3A4853841CF14B83E5B70EE4 /* Pods_fastest_worldTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA79A3CF4CB89F16B970E4B /* Pods_fastest_worldTests.framework */; };
 		A907A5AB1DA1D1F900192DBD /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A907A5AA1DA1D1F900192DBD /* RoundedCornerView.swift */; };
 		A90B980D1D871DCA0075F342 /* Launch_Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90B980C1D871DCA0075F342 /* Launch_Screen.storyboard */; };
+		A926EE491DA3006000FED310 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A926EE481DA3006000FED310 /* GameVC.swift */; };
 		A931414E1D84C4F000B4AFBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A931414D1D84C4F000B4AFBE /* AppDelegate.swift */; };
 		A93141501D84C4F000B4AFBE /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A931414F1D84C4F000B4AFBE /* SignInVC.swift */; };
 		A93141531D84C4F000B4AFBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A93141511D84C4F000B4AFBE /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 		6DA79A3CF4CB89F16B970E4B /* Pods_fastest_worldTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fastest_worldTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A907A5AA1DA1D1F900192DBD /* RoundedCornerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
 		A90B980C1D871DCA0075F342 /* Launch_Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch_Screen.storyboard; sourceTree = "<group>"; };
+		A926EE481DA3006000FED310 /* GameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
 		A931414A1D84C4EF00B4AFBE /* fastest.world.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fastest.world.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A931414D1D84C4F000B4AFBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A931414F1D84C4F000B4AFBE /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				A97670AF1D98A623001CD254 /* EmailSignUpVC.swift */,
 				A9A9C84E1DA1738D00B7E71E /* UnamePopUpVC.swift */,
 				A9C359CA1DA188FC00389C3B /* TestViewController.swift */,
+				A926EE481DA3006000FED310 /* GameVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				A9C359CB1DA188FC00389C3B /* TestViewController.swift in Sources */,
 				A93141501D84C4F000B4AFBE /* SignInVC.swift in Sources */,
 				A931414E1D84C4F000B4AFBE /* AppDelegate.swift in Sources */,
+				A926EE491DA3006000FED310 /* GameVC.swift in Sources */,
 				A93141561D84C4F000B4AFBE /* fastest_world.xcdatamodeld in Sources */,
 				A9A9C84F1DA1738E00B7E71E /* UnamePopUpVC.swift in Sources */,
 				A97670AC1D96621E001CD254 /* EmailSignInVC.swift in Sources */,

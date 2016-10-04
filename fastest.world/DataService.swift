@@ -17,6 +17,7 @@ class DataService {
     
     private var _REF_BASE = DB_BASE
     private var _REF_USERS = DB_BASE.child("users")
+    private var _REF_SCORES = DB_BASE.child("scores")
     
     //getters since private variables
     var REF_BASE: FIRDatabaseReference {
@@ -34,19 +35,27 @@ class DataService {
         REF_USERS.child(uid).updateChildValues(userData)
     }
     
-    /*func doesUsernameExist(username: String) -> Bool {
-        var exist: Bool = true
-        print("VIK: Arrived at exist")
-        _REF_USERS.queryOrdered(byChild: "uname").queryEqual(toValue: username).observeSingleEvent(of: .value, with: { snapshot in
-            print("VIK: entered")
-            if snapshot.exists() == true {
-                print("VIK: snapshot exists")
+    func updatePoints(points: Int) {
+        
+        var dbRetreivedPoints: Int = 0
+        
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        
+        //get current points
+        _REF_SCORES.observeSingleEvent(of: .value, with: { snapshot in
+            print(uid!)
+            if let dbpoints = snapshot.value?[uid!] as? Int {
+                //Setting Points - Username
+                dbRetreivedPoints = dbpoints
+                print(dbRetreivedPoints)
             } else {
-                print("VIK: snapshot does not exist")
-                exist =
+                //not there
+                dbRetreivedPoints = 0
             }
+            
+            let updatedPoints = points + dbRetreivedPoints
+            let userData: Dictionary<String, Int> = [ uid!: updatedPoints ]
+            self._REF_SCORES.updateChildValues(userData)
         })
-        print("exist var value: \(exist)")
-        return exist
-    }*/
+    }
 }

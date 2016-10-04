@@ -21,26 +21,15 @@ class HomeVC: UIViewController {
         
         let uid = FIRAuth.auth()?.currentUser?.uid
         let refSpecificUser : FIRDatabaseReference = FIRDatabase.database().reference().child("users").child(uid!)
-        let refUser : FIRDatabaseReference = FIRDatabase.database().reference().child("users")
+        //let refUser : FIRDatabaseReference = FIRDatabase.database().reference().child("users")
         
         //Set Title - Username, Best Time, Rank
         refSpecificUser.observeSingleEvent(of: .value, with: { snapshot in
-            let username = snapshot.value?["uname"] as? String
-            let bestTime = snapshot.value?["bestTime"] as? String
-            
-            //Setting Title - Username
-            self.unameLabel.text = username!
-            self.unameLabel.isHidden = false
-            
-            //Setting Best Time
-            //self.bestTimeLabel.text = bestTime!
-            //self.bestTimeLabel.isHidden = false
-            
-            //Setting Rank - Another call to db?
-            //refUser.observeSingleEvent(of: .value, with: { snapshot in
-                
-           // })
-            
+            if let username = snapshot.value?["uname"] as? String {
+                //Setting Title - Username
+                self.unameLabel.text = username
+                self.unameLabel.isHidden = false
+            }
         })
         
 
