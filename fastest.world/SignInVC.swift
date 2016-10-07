@@ -13,7 +13,7 @@ import Firebase
 import SwiftKeychainWrapper
 
 class SignInVC: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -28,10 +28,6 @@ class SignInVC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    @IBAction func buttonTapped(_ sender: AnyObject) {
-        performSegue(withIdentifier: "goToSetUname", sender: nil)
     }
     
     @IBAction func facebookBtnTapped(_ sender: AnyObject) {
@@ -59,8 +55,25 @@ class SignInVC: UIViewController {
             } else {
                 print("VIK: Successfully authenticated with Firebase")
                 if let user = user {
-                    let userData = ["uname": user.displayName!, "provider": credential.provider]
-                    self.completeSignIn(id: user.uid, userData: userData)
+                    var ref: FIRDatabaseReference! = FIRDatabase.database().reference().child("users")
+                    let uid = user.uid
+                    //check if user already exists
+                    ref.child(uid).observeSingleEvent(of: .value, with: { snapshot in
+                        print("VIK: entered")
+                        if snapshot.exists() == true {
+                            //user already exists - continue to home page and add to keychain
+                            print("VIK: user already exists")
+                            
+                            let keychainResult = KeychainWrapper.defaultKeychainWrapper().setString(uid, forKey: KEY_UID)
+                            print("VIK: Data saved to keychain \(keychainResult)")
+                            
+                            self.performSegue(withIdentifier: "goToHome", sender: nil)
+                        } else {
+                            //user does not exist - create one
+                            let userData = ["uname": user.displayName!, "provider": credential.provider, "attempts" : String(5)]
+                            self.completeSignIn(id: user.uid, userData: userData)
+                        }
+                    })
                 }
             }
         })

@@ -13,17 +13,20 @@ import SwiftKeychainWrapper
 class HomeVC: UIViewController {
 
     @IBOutlet weak var unameLabel: UILabel!
-    @IBOutlet weak var bestTimeLabel: UILabel!
     @IBOutlet weak var rankLabel: UILabel!
+    @IBOutlet weak var userScoreLabel: UILabel!
+    
+    private var rankCounter: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let uid = FIRAuth.auth()?.currentUser?.uid
+        var uid = FIRAuth.auth()?.currentUser?.uid
         let refSpecificUser : FIRDatabaseReference = FIRDatabase.database().reference().child("users").child(uid!)
+        let refScores: FIRDatabaseReference = FIRDatabase.database().reference().child("scores")
         //let refUser : FIRDatabaseReference = FIRDatabase.database().reference().child("users")
         
-        //Set Title - Username, Best Time, Rank
+        //Set Title - Username, Score, Medal
         refSpecificUser.observeSingleEvent(of: .value, with: { snapshot in
             if let username = snapshot.value?["uname"] as? String {
                 //Setting Title - Username
@@ -32,6 +35,27 @@ class HomeVC: UIViewController {
             }
         })
         
+        // Set Ranking and Score - get top hundred and if instance of uid is not there just give yellow medal
+        refScores.queryOrderedByValue().observe(FIRDataEventType.value, with: { snapshot in
+            print("There are \(snapshot.childrenCount) scores")
+            let enumerator = snapshot.children
+            while let score = enumerator.nextObject() as? FIRDataSnapshot {
+                print(score.value)
+                self.rankCounter += 1
+                if uid! == score.key {
+                    self.userScoreLabel.text = String(score.value!)
+                    self.userScoreLabel.isHidden = false
+                    
+                    print("VIK: User rank is \(self.rankCounter)")
+                }
+            }
+            /*for child in snapshot.children {
+                if let score = child.value(forKey: uid!) as! [FIRDataSnapshot] {
+                    self.userScoreLabel.text = String(score)
+                    self.userScoreLabel.isHidden = false
+                }
+            }*/
+        })
 
         // Do any additional setup after loading the view.
     }

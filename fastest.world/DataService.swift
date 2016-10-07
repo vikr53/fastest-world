@@ -18,6 +18,7 @@ class DataService {
     private var _REF_BASE = DB_BASE
     private var _REF_USERS = DB_BASE.child("users")
     private var _REF_SCORES = DB_BASE.child("scores")
+    private var doesExist = false
     
     //getters since private variables
     var REF_BASE: FIRDatabaseReference {
@@ -57,5 +58,22 @@ class DataService {
             let userData: Dictionary<String, Int> = [ uid!: updatedPoints ]
             self._REF_SCORES.updateChildValues(userData)
         })
+    }
+    
+    func doesUserExist(uid: String) -> Bool {
+        _REF_USERS.child(uid).observeSingleEvent(of: .value, with: { snapshot in
+            if snapshot.exists() {
+                //user already exists
+                print("VIK: Snapshot \(snapshot.value) exists")
+                self.doesExist = true
+                print("VIK \(self.doesExist)")
+            } else {
+                //user does not exist
+                print("VIK: Snapshot \(snapshot.value) DOES NOT exist")
+                self.doesExist = false
+                print("VIK \(self.doesExist)")
+            }
+        })
+        return doesExist
     }
 }
