@@ -9,6 +9,9 @@ PODS:
     - Bolts (~> 1.7)
   - FBSDKLoginKit (4.15.1):
     - FBSDKCoreKit
+  - Firebase/AdMob (3.5.2):
+    - Firebase/Analytics
+    - Google-Mobile-Ads-SDK (= 7.10.1)
   - Firebase/Analytics (3.5.2):
     - FirebaseAnalytics (~> 3.3)
   - Firebase/Auth (3.5.2):
@@ -32,6 +35,7 @@ PODS:
   - FirebaseDatabase (3.0.2):
     - FirebaseAnalytics (~> 3.2)
   - FirebaseInstanceID (1.0.8)
+  - Google-Mobile-Ads-SDK (7.10.1)
   - GoogleInterchangeUtilities (1.2.1):
     - GoogleSymbolUtilities (~> 1.0)
   - GoogleNetworkingUtilities (1.2.1):
@@ -46,6 +50,7 @@ PODS:
 
 DEPENDENCIES:
   - FBSDKLoginKit
+  - Firebase/AdMob
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -60,6 +65,7 @@ SPEC CHECKSUMS:
   FirebaseAuth: 26fd291c3b552fc9658420b867520d5ae080421c
   FirebaseDatabase: 59bea2e7dfd81b3b8b2f8e396caf1a52c2ced6f7
   FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
+  Google-Mobile-Ads-SDK: c8da9e592fe43d9b47ef86b018cadb71af53f6b3
   GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
   GoogleNetworkingUtilities: 3e83269048cfb498dc7ec83ab36813360965c74f
   GoogleParsingUtilities: 30b3896f9ee167dc78747f013d3de157ced1cadf
@@ -67,6 +73,6 @@ SPEC CHECKSUMS:
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   SwiftKeychainWrapper: 3575838215fa36c816899c301a7afe370bd94814
 
-PODFILE CHECKSUM: a4e96a598ca69befe89ce2132252dbd075e17fe5
+PODFILE CHECKSUM: eab70841ffe09afe9ab3f4478b18ed9932f0203e
 
 COCOAPODS: 1.0.1

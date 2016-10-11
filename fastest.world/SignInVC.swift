@@ -55,7 +55,7 @@ class SignInVC: UIViewController {
             } else {
                 print("VIK: Successfully authenticated with Firebase")
                 if let user = user {
-                    var ref: FIRDatabaseReference! = FIRDatabase.database().reference().child("users")
+                    let ref: FIRDatabaseReference! = FIRDatabase.database().reference().child("users")
                     let uid = user.uid
                     //check if user already exists
                     ref.child(uid).observeSingleEvent(of: .value, with: { snapshot in
@@ -94,6 +94,6 @@ class SignInVC: UIViewController {
         self.view.addSubview(popOverVC.view)
         popOverVC.didMove(toParentViewController: self)
     }
-
+    
 }
 

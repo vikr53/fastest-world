@@ -10,6 +10,7 @@
 		3A4853841CF14B83E5B70EE4 /* Pods_fastest_worldTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA79A3CF4CB89F16B970E4B /* Pods_fastest_worldTests.framework */; };
 		A907A5AB1DA1D1F900192DBD /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A907A5AA1DA1D1F900192DBD /* RoundedCornerView.swift */; };
 		A90B980D1D871DCA0075F342 /* Launch_Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90B980C1D871DCA0075F342 /* Launch_Screen.storyboard */; };
+		A924BFE31DACCF46006A4746 /* StatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A924BFE21DACCF46006A4746 /* StatsVC.swift */; };
 		A926EE491DA3006000FED310 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A926EE481DA3006000FED310 /* GameVC.swift */; };
 		A931414E1D84C4F000B4AFBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A931414D1D84C4F000B4AFBE /* AppDelegate.swift */; };
 		A93141501D84C4F000B4AFBE /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A931414F1D84C4F000B4AFBE /* SignInVC.swift */; };
@@ -25,6 +26,9 @@
 		A97670B01D98A623001CD254 /* EmailSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97670AF1D98A623001CD254 /* EmailSignUpVC.swift */; };
 		A97670B31D98BD90001CD254 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97670B21D98BD90001CD254 /* Constants.swift */; };
 		A97670B81D990BE7001CD254 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97670B71D990BE7001CD254 /* DataService.swift */; };
+		A99BDF321DA9BFCE0026C409 /* LeaderboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99BDF311DA9BFCE0026C409 /* LeaderboardVC.swift */; };
+		A99BDF341DA9CEF20026C409 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99BDF331DA9CEF20026C409 /* CustomCell.swift */; };
+		A99BDF361DAA07D70026C409 /* leaderboardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99BDF351DAA07D70026C409 /* leaderboardStyle.swift */; };
 		A9A9C84F1DA1738E00B7E71E /* UnamePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A9C84E1DA1738D00B7E71E /* UnamePopUpVC.swift */; };
 		A9C359CB1DA188FC00389C3B /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C359CA1DA188FC00389C3B /* TestViewController.swift */; };
 		B1337E5375FC756CEBCE99C0 /* Pods_fastest_world.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E897DB94CC83D7791DD8485 /* Pods_fastest_world.framework */; };
@@ -46,6 +50,7 @@
 		6DA79A3CF4CB89F16B970E4B /* Pods_fastest_worldTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fastest_worldTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A907A5AA1DA1D1F900192DBD /* RoundedCornerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
 		A90B980C1D871DCA0075F342 /* Launch_Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch_Screen.storyboard; sourceTree = "<group>"; };
+		A924BFE21DACCF46006A4746 /* StatsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsVC.swift; sourceTree = "<group>"; };
 		A926EE481DA3006000FED310 /* GameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
 		A931414A1D84C4EF00B4AFBE /* fastest.world.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fastest.world.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A931414D1D84C4F000B4AFBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +70,9 @@
 		A97670AF1D98A623001CD254 /* EmailSignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignUpVC.swift; sourceTree = "<group>"; };
 		A97670B21D98BD90001CD254 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A97670B71D990BE7001CD254 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		A99BDF311DA9BFCE0026C409 /* LeaderboardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeaderboardVC.swift; sourceTree = "<group>"; };
+		A99BDF331DA9CEF20026C409 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		A99BDF351DAA07D70026C409 /* leaderboardStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = leaderboardStyle.swift; sourceTree = "<group>"; };
 		A9A9C84E1DA1738D00B7E71E /* UnamePopUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnamePopUpVC.swift; sourceTree = "<group>"; };
 		A9C359CA1DA188FC00389C3B /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		AFE47FD24EB60123982D83B0 /* Pods-fastest.world.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fastest.world.release.xcconfig"; path = "Pods/Target Support Files/Pods-fastest.world/Pods-fastest.world.release.xcconfig"; sourceTree = "<group>"; };
@@ -164,6 +172,7 @@
 			children = (
 				A93BA46D1DA0615C00719710 /* GenElement.swift */,
 				A907A5AA1DA1D1F900192DBD /* RoundedCornerView.swift */,
+				A99BDF351DAA07D70026C409 /* leaderboardStyle.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -178,6 +187,9 @@
 				A9A9C84E1DA1738D00B7E71E /* UnamePopUpVC.swift */,
 				A9C359CA1DA188FC00389C3B /* TestViewController.swift */,
 				A926EE481DA3006000FED310 /* GameVC.swift */,
+				A99BDF311DA9BFCE0026C409 /* LeaderboardVC.swift */,
+				A99BDF331DA9CEF20026C409 /* CustomCell.swift */,
+				A924BFE21DACCF46006A4746 /* StatsVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -426,9 +438,13 @@
 				A931414E1D84C4F000B4AFBE /* AppDelegate.swift in Sources */,
 				A926EE491DA3006000FED310 /* GameVC.swift in Sources */,
 				A93141561D84C4F000B4AFBE /* fastest_world.xcdatamodeld in Sources */,
+				A99BDF361DAA07D70026C409 /* leaderboardStyle.swift in Sources */,
+				A99BDF341DA9CEF20026C409 /* CustomCell.swift in Sources */,
 				A9A9C84F1DA1738E00B7E71E /* UnamePopUpVC.swift in Sources */,
 				A97670AC1D96621E001CD254 /* EmailSignInVC.swift in Sources */,
 				A97670B31D98BD90001CD254 /* Constants.swift in Sources */,
+				A99BDF321DA9BFCE0026C409 /* LeaderboardVC.swift in Sources */,
+				A924BFE31DACCF46006A4746 /* StatsVC.swift in Sources */,
 				A950827F1DA1F1230031E69F /* HomeVC.swift in Sources */,
 				A97670B81D990BE7001CD254 /* DataService.swift in Sources */,
 				A907A5AB1DA1D1F900192DBD /* RoundedCornerView.swift in Sources */,

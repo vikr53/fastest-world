@@ -8,6 +8,7 @@ target 'fastest.world' do
   # Pods for fastest.world
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/AdMob'
   pod 'Firebase/Database'
   pod 'FBSDKLoginKit'
   pod 'SwiftKeychainWrapper'

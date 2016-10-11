@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class GameVC: UIViewController {
 
@@ -15,7 +16,6 @@ class GameVC: UIViewController {
     @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var stimulusView: RoundedCornerView!
     
-    
     var timer: Timer = Timer()
     var userTimeCount: Double = 0.00
     var targetTime: Double = 0.50
@@ -23,14 +23,21 @@ class GameVC: UIViewController {
     var hasPresentedStimulus: Bool = false
     var earlyTapped: Bool = false
     
+    var receivedUname:String = ""
+    
+    var interstitial: GADInterstitial!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.createAndLoadInterstitial()
         /* self.targetTimeLabel.alpha = 0.0
         self.targetTimeLabel.text = String(targetTime) */
         
         self.userTimeLabel.text = "-.--"
         self.pointsLabel.text = String(0)
+        
+        print("VIK: \(receivedUname)")
         
         // Do any additional setup after loading the view.
     }
@@ -90,9 +97,13 @@ class GameVC: UIViewController {
                     points += 10
                     //user won!
                     //send points data to firebase
-                    DataService.ds.updatePoints(points: points)
-                    //perform segue
-                    performSegue(withIdentifier: "goToHome", sender: nil)
+                    DataService.ds.updatePoints(points: points, uname: receivedUname)
+                    //update attempts
+                    DataService.ds.updateAttempts()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                        //perform segue to stats page
+                        self.performSegue(withIdentifier: "goToStats", sender: nil)
+                    }
                 default:
                     print("Some error has occured or user has finished the game")
                 }
@@ -101,12 +112,6 @@ class GameVC: UIViewController {
             } else {
                 //end the game - move to popup
                 print("VIK: You failed")
-                
-                //send points data to firebase
-                DataService.ds.updatePoints(points: points)
-                
-                //perform segue
-                performSegue(withIdentifier: "goToHome", sender: nil)
             }
         } else {
             //early tap
@@ -119,10 +124,14 @@ class GameVC: UIViewController {
             self.userTimeLabel.sizeToFit()
             
             //send points data to firebase
-            DataService.ds.updatePoints(points: points)
-            
-            //perform segue
-            performSegue(withIdentifier: "goToHome", sender: nil)
+            DataService.ds.updatePoints(points: points, uname: receivedUname)
+            //update attempts
+            DataService.ds.updateAttempts()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                //perform segue to stats page
+                self.performSegue(withIdentifier: "goToStats", sender: nil)
+            }
+
         }
     }
 
@@ -163,12 +172,26 @@ class GameVC: UIViewController {
             self.timer.invalidate()
             userTimeCount = 1.0
             self.stimulusView.backgroundColor = UIColor(red:0.22, green:0.22, blue:0.22, alpha:1.0)
+            //send points data to firebase
+            DataService.ds.updatePoints(points: points, uname: receivedUname)
+            //update number of attempts in firebase db
+            DataService.ds.updateAttempts()
             //pause
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                //perform segue back home
-                self.performSegue(withIdentifier: "goToHome", sender: nil)
-            }
+                //perform segue to stats page
+                self.performSegue(withIdentifier: "goToStats", sender: nil)
         }
+    }
+    
+    private func createAndLoadInterstitial() {
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        let request = GADRequest()
+        request.testDevices = [ kGADSimulatorID ]
+        interstitial.load(request)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+        let secondVC: StatsVC = segue.destination as! StatsVC
+        secondVC.pointsEarned = self.points
     }
     
     /*

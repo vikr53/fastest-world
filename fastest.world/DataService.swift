@@ -18,7 +18,8 @@ class DataService {
     private var _REF_BASE = DB_BASE
     private var _REF_USERS = DB_BASE.child("users")
     private var _REF_SCORES = DB_BASE.child("scores")
-    private var doesExist = false
+    private var _REF_STATS = DB_BASE.child("stats")
+    //private var doesExist = false
     
     //getters since private variables
     var REF_BASE: FIRDatabaseReference {
@@ -36,16 +37,14 @@ class DataService {
         REF_USERS.child(uid).updateChildValues(userData)
     }
     
-    func updatePoints(points: Int) {
+    func updatePoints(points: Int, uname: String) {
         
         var dbRetreivedPoints: Int = 0
         
-        let uid = FIRAuth.auth()?.currentUser?.uid
-        
         //get current points
         _REF_SCORES.observeSingleEvent(of: .value, with: { snapshot in
-            print(uid!)
-            if let dbpoints = snapshot.value?[uid!] as? Int {
+            print("VIK: entered the update points db check")
+            if let dbpoints = snapshot.value?[uname] as? Int {
                 //Setting Points - Username
                 dbRetreivedPoints = dbpoints
                 print(dbRetreivedPoints)
@@ -54,13 +53,31 @@ class DataService {
                 dbRetreivedPoints = 0
             }
             
-            let updatedPoints = points + dbRetreivedPoints
-            let userData: Dictionary<String, Int> = [ uid!: updatedPoints ]
+            //retreive the current stats
+            self._REF_STATS.observeSingleEvent(of: .value, with: { snapshot in
+                print("VIK: enterd stats child")
+                var dbRetreivedData: Int = 0
+                if let noUsersForTimeLostAt = snapshot.value?[points] as? Int {
+                    print("VIK: Number of users for points = \(noUsersForTimeLostAt)")
+                    dbRetreivedData = noUsersForTimeLostAt
+                    dbRetreivedData = dbRetreivedData + 1
+                } else {
+                    print("VIK: Couldn't get any data")
+                    dbRetreivedData = 1
+                }
+                let userData: Dictionary<Int, Int> = [ points: dbRetreivedData ]
+                self._REF_STATS.updateChildValues(userData)
+                print("VIK: Updated stat child")
+            })
+            
+            //update scores branch
+            let updatedPoints = -points + dbRetreivedPoints
+            let userData: Dictionary<String, Int> = [ uname: updatedPoints ]
             self._REF_SCORES.updateChildValues(userData)
         })
     }
     
-    func doesUserExist(uid: String) -> Bool {
+    /* func doesUserExist(uid: String) -> Bool {
         _REF_USERS.child(uid).observeSingleEvent(of: .value, with: { snapshot in
             if snapshot.exists() {
                 //user already exists
@@ -75,5 +92,33 @@ class DataService {
             }
         })
         return doesExist
+    } */
+    
+    func updateAttempts() {
+        
+        var dBRetreivedAttemtps: Int = 0
+        
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        
+        print("VIK: here")
+        //get current attempts
+        _REF_USERS.child(uid!).child("attempts").observeSingleEvent(of: .value, with: { snapshot in
+            print("VIK: now inside")
+            print("VIK \(snapshot.value)")
+            if let dbAttempts = snapshot.value as? String {
+                //Attempts key exists
+                dBRetreivedAttemtps = Int(dbAttempts)!
+                print("VIK: The user had \(dBRetreivedAttemtps) before playing this game")
+                let updatedAttempts = Int(dBRetreivedAttemtps) - 1
+                let userData: Dictionary<String, String> = ["attempts": String(updatedAttempts)]
+                self._REF_USERS.child(uid!).updateChildValues(userData)
+            } else {
+                //Attempts key does not exist
+                dBRetreivedAttemtps = 0
+                print("VIK: Attempts key does not exist")
+            }
+        })
+        
     }
+    
 }
