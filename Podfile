@@ -13,7 +13,6 @@ target 'fastest.world' do
   pod 'FBSDKLoginKit'
   pod 'SwiftKeychainWrapper'
 
-
   target 'fastest.worldTests' do
     inherit! :search_paths
     # Pods for testing

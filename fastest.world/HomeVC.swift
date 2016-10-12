@@ -20,6 +20,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var medalTypeImageView: UIImageView!
     @IBOutlet weak var animationView: UIImageView!
     @IBOutlet weak var animationViewPoints: UIImageView!
+    @IBOutlet weak var animationViewAttempts: UIImageView!
     
     let uid = FIRAuth.auth()?.currentUser?.uid
     
@@ -40,9 +41,13 @@ class HomeVC: UIViewController {
         self.animationViewPoints.animationDuration = 0.5
         self.animationViewPoints.startAnimating()
         
+        self.animationViewAttempts.animationImages = imgListArray
+        self.animationViewAttempts.animationDuration = 0.5
+        self.animationViewAttempts.startAnimating()
+        
         //Set Title - Username, Score, Medal
         refSpecificUser.observeSingleEvent(of: .value, with: { snapshot in
-            if let username = snapshot.value?["uname"] as? String {
+            if let username = (snapshot.value as? NSDictionary)?["uname"] as? String {
                 self.dbUname = username
                 print("VIK: Set the username just now")
                 //Setting Title - Username
@@ -55,11 +60,27 @@ class HomeVC: UIViewController {
                 print("There are \(snapshot.childrenCount) scores")
                 let enumerator = snapshot.children
                 var rankCounter = 0
+    
+                //check if already add and act accordingly
+                print("VIK2: \(self.dbUname) -> self.dbUname")
+                print("VIK2: score = \((snapshot.value as? NSDictionary)?[self.dbUname])")
+                if let userScore = (snapshot.value as? NSDictionary)?[self.dbUname] as? Int {
+                    print("VIK2: User Score exists = \(userScore)")
+                } else {
+                    print("VIK2: User Score does not exist")
+                    //also give points = 0
+                    
+                    let userData2: Dictionary<String, Int> = [self.dbUname: 0]
+                    refScores.updateChildValues(userData2)
+                }
+                
                 while let score = enumerator.nextObject() as? FIRDataSnapshot {
                     print(score.value)
                     rankCounter = rankCounter + 1
                     if self.dbUname == score.key {
                         let convertedScore = -(score.value! as! Int)
+                        print("VIK: \(score.key)")
+                        print("VIK: \(convertedScore)")
                         self.userScoreLabel.text = String(convertedScore)
                         
                         //stop animating
@@ -70,6 +91,7 @@ class HomeVC: UIViewController {
                         
                         print("VIK: User rank is \(rankCounter)")
                         self.rank = rankCounter
+                        
                     }
                 }
                 //give appropriate medal
@@ -114,11 +136,15 @@ class HomeVC: UIViewController {
             
             //Setting attempts
             refSpecificUser.observe(FIRDataEventType.value, with: { snapshot in
-                if let currentAttempts = snapshot.value?["attempts"] as? String {
+                if let currentAttempts = (snapshot.value as? NSDictionary)?["attempts"] as? String {
                     print("VIK: \(currentAttempts) current attempts")
                     self.attemptsImageView.image = UIImage(named: "\(currentAttempts)Attempt")
                     self.attemptsImageView.isHidden = false
                     print("VIK: changed attemptsImageView")
+                    
+                    //stop animating
+                    self.animationViewAttempts.stopAnimating()
+                    self.animationViewAttempts.isHidden = true
                 } else {
                     print("VIK: Some error occured trying to get the number of attempts left")
                 }
@@ -141,7 +167,7 @@ class HomeVC: UIViewController {
         performSegue(withIdentifier: "goToSignIn", sender: nil)
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("VIK: \(segue.destination)")
         if(segue.identifier == "goToLeaderboard") {
             let secondVC: LeaderboardVC = segue.destination as! LeaderboardVC
@@ -150,7 +176,6 @@ class HomeVC: UIViewController {
             let secondVC: GameVC = segue.destination as! GameVC
             secondVC.receivedUname = self.dbUname
         }
-        
     }
     
     /*

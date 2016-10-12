@@ -76,7 +76,7 @@ class EmailSignUpVC: UIViewController {
                             } else {
                                 print("Successfully signed the user in")
                                 if let user = user {
-                                    let userData = ["email": email, "provider": "Firebase"]
+                                    let userData = ["email": email, "provider": "Firebase", "attempts": String(5)]
                                     self.completeSignIn(id: user.uid, userData: userData)
                                 }
                             }

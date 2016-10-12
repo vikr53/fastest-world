@@ -30,14 +30,13 @@ class GameVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.createAndLoadInterstitial()
         /* self.targetTimeLabel.alpha = 0.0
         self.targetTimeLabel.text = String(targetTime) */
         
         self.userTimeLabel.text = "-.--"
         self.pointsLabel.text = String(0)
         
-        print("VIK: \(receivedUname)")
+        print("VIK2: \(receivedUname)")
         
         // Do any additional setup after loading the view.
     }
@@ -100,10 +99,8 @@ class GameVC: UIViewController {
                     DataService.ds.updatePoints(points: points, uname: receivedUname)
                     //update attempts
                     DataService.ds.updateAttempts()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                         //perform segue to stats page
                         self.performSegue(withIdentifier: "goToStats", sender: nil)
-                    }
                 default:
                     print("Some error has occured or user has finished the game")
                 }
@@ -127,10 +124,10 @@ class GameVC: UIViewController {
             DataService.ds.updatePoints(points: points, uname: receivedUname)
             //update attempts
             DataService.ds.updateAttempts()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-                //perform segue to stats page
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+//                //perform segue to stats page
                 self.performSegue(withIdentifier: "goToStats", sender: nil)
-            }
+            //}
 
         }
     }
@@ -152,7 +149,7 @@ class GameVC: UIViewController {
         print("VIK: finished animating")
         
         //assign a random number and delay the stimuli by that time
-        let random = drand48() * 5 + 2
+        let random = drand48() * 3 + 2
         DispatchQueue.main.asyncAfter(deadline: .now() + random) {
             if (!self.earlyTapped) {
                 print("VIK: Entered the delayed loop")
@@ -177,21 +174,20 @@ class GameVC: UIViewController {
             //update number of attempts in firebase db
             DataService.ds.updateAttempts()
             //pause
-                //perform segue to stats page
-                self.performSegue(withIdentifier: "goToStats", sender: nil)
+            //perform segue to stats page
+            self.performSegue(withIdentifier: "goToStats", sender: nil)
         }
     }
     
-    private func createAndLoadInterstitial() {
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
-        let request = GADRequest()
-        request.testDevices = [ kGADSimulatorID ]
-        interstitial.load(request)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
-        let secondVC: StatsVC = segue.destination as! StatsVC
-        secondVC.pointsEarned = self.points
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let rand = drand48() * 3
+        print("VIK: Random number that determines ad display - \(rand)")
+        if rand < 2.0 {
+            print("VIK: Ad will be shown")
+            let secondVC: StatsVC = segue.destination as! StatsVC
+            secondVC.shouldDisplayAd = true
+            secondVC.pointsEarned = points
+        }
     }
     
     /*

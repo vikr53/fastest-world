@@ -55,10 +55,10 @@ class SignInVC: UIViewController {
             } else {
                 print("VIK: Successfully authenticated with Firebase")
                 if let user = user {
-                    let ref: FIRDatabaseReference! = FIRDatabase.database().reference().child("users")
+                    let ref: FIRDatabaseReference! = FIRDatabase.database().reference()
                     let uid = user.uid
                     //check if user already exists
-                    ref.child(uid).observeSingleEvent(of: .value, with: { snapshot in
+                    ref.child("users").child(uid).observeSingleEvent(of: .value, with: { snapshot in
                         print("VIK: entered")
                         if snapshot.exists() == true {
                             //user already exists - continue to home page and add to keychain

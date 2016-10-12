@@ -41,40 +41,49 @@ class DataService {
         
         var dbRetreivedPoints: Int = 0
         
+        //retreive the current stats
+        self._REF_STATS.observeSingleEvent(of: .value, with: { snapshot in
+            print("VIK: enterd stats child")
+            var dbRetreivedData: Int = 0
+            print("VIK: User received \(points) points")
+            print("VIK: \((snapshot.value as? NSDictionary)?[String(points)] as! Int)")
+            if let noUsersForTimeLostAt = (snapshot.value as? NSDictionary)?[String(points)] as? Int {
+                print("VIK: Number of users for points = \(noUsersForTimeLostAt)")
+                dbRetreivedData = noUsersForTimeLostAt
+                dbRetreivedData = dbRetreivedData + 1
+            } else {
+                print("VIK: Couldn't get any data")
+                dbRetreivedData = 1
+            }
+            let userData: Dictionary<String, Int> = [ String(points): dbRetreivedData ]
+            self._REF_STATS.updateChildValues(userData)
+            print("VIK: Updated stat child")
+        })
+    
         //get current points
-        _REF_SCORES.observeSingleEvent(of: .value, with: { snapshot in
+        self._REF_SCORES.observeSingleEvent(of: .value, with: { snapshot in
             print("VIK: entered the update points db check")
-            if let dbpoints = snapshot.value?[uname] as? Int {
+            print("VIK2: \((snapshot.value as? NSDictionary)?[uname])")
+            if let dbPoints = (snapshot.value as? NSDictionary)?[uname] as? Int {
                 //Setting Points - Username
-                dbRetreivedPoints = dbpoints
+                print("VIK2: dbPoints \(dbPoints)")
+                dbRetreivedPoints = dbPoints
                 print(dbRetreivedPoints)
             } else {
                 //not there
                 dbRetreivedPoints = 0
+                print("VIK: Making dbpoints 0")
             }
             
-            //retreive the current stats
-            self._REF_STATS.observeSingleEvent(of: .value, with: { snapshot in
-                print("VIK: enterd stats child")
-                var dbRetreivedData: Int = 0
-                if let noUsersForTimeLostAt = snapshot.value?[points] as? Int {
-                    print("VIK: Number of users for points = \(noUsersForTimeLostAt)")
-                    dbRetreivedData = noUsersForTimeLostAt
-                    dbRetreivedData = dbRetreivedData + 1
-                } else {
-                    print("VIK: Couldn't get any data")
-                    dbRetreivedData = 1
-                }
-                let userData: Dictionary<Int, Int> = [ points: dbRetreivedData ]
-                self._REF_STATS.updateChildValues(userData)
-                print("VIK: Updated stat child")
-            })
-            
             //update scores branch
-            let updatedPoints = -points + dbRetreivedPoints
-            let userData: Dictionary<String, Int> = [ uname: updatedPoints ]
-            self._REF_SCORES.updateChildValues(userData)
-        })
+            print("VIK2: points earned = \(points)")
+            let updatedPoints: Int = -points + dbRetreivedPoints
+            print("VIK2: Updated points \(updatedPoints)")
+            print("VIK2: \(uname)")
+            let userData2: Dictionary<String, Int> = [String(uname): updatedPoints]
+            self._REF_BASE.child("scores").updateChildValues(userData2)
+            print("VIK2: Updated scores child")
+         })
     }
     
     /* func doesUserExist(uid: String) -> Bool {
@@ -94,7 +103,7 @@ class DataService {
         return doesExist
     } */
     
-    func updateAttempts() {
+    func updateAttempts(){
         
         var dBRetreivedAttemtps: Int = 0
         

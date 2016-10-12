@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sSi-Bs-6CU">
@@ -111,7 +111,7 @@
                         <viewControllerLayoutGuide type="bottom" id="tm7-Gb-yxm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Gcz-bI-doL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="qiy-LA-wLx">
@@ -319,11 +319,19 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjU-d8-xOH" customClass="GenElement" customModule="fastest_world" customModuleProvider="target">
                                         <subviews>
                                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5Attempt" translatesAutoresizingMaskIntoConstraints="NO" id="7jW-gK-boi"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qDG-E3-9NX">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="28" id="Dx8-3n-SCb"/>
+                                                    <constraint firstAttribute="width" constant="92" id="kF8-il-vW3"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="7jW-gK-boi" firstAttribute="centerX" secondItem="tjU-d8-xOH" secondAttribute="centerX" id="44c-jH-gmH"/>
+                                            <constraint firstItem="qDG-E3-9NX" firstAttribute="centerX" secondItem="tjU-d8-xOH" secondAttribute="centerX" id="Hqm-yo-mer"/>
                                             <constraint firstItem="7jW-gK-boi" firstAttribute="centerY" secondItem="tjU-d8-xOH" secondAttribute="centerY" id="S2V-C6-x4l"/>
+                                            <constraint firstItem="qDG-E3-9NX" firstAttribute="centerY" secondItem="tjU-d8-xOH" secondAttribute="centerY" id="k2g-Pu-xc2"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBp-dS-gN0" customClass="GenElement" customModule="fastest_world" customModuleProvider="target">
@@ -383,6 +391,7 @@
                     </view>
                     <connections>
                         <outlet property="animationView" destination="rgK-ah-AA6" id="lFH-uo-Gtu"/>
+                        <outlet property="animationViewAttempts" destination="qDG-E3-9NX" id="N0t-3g-Tex"/>
                         <outlet property="animationViewPoints" destination="jh0-KS-CLk" id="npN-cN-pI4"/>
                         <outlet property="attemptsImageView" destination="7jW-gK-boi" id="TUA-oD-tZu"/>
                         <outlet property="medalImageView" destination="4pP-pP-1N3" id="7Cy-Do-pDX"/>
@@ -394,7 +403,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfD-2X-e0E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-20" y="1406.4467766116943"/>
+            <point key="canvasLocation" x="-20.625" y="1405.9859154929577"/>
         </scene>
         <!--LeaderboardVC-->
         <scene sceneID="kon-Kz-oPN">
@@ -544,7 +553,7 @@
                         <viewControllerLayoutGuide type="bottom" id="1Hu-2L-Ohr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5JZ-0L-nQG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E5j-Bc-rnf" customClass="RoundedCornerView" customModule="fastest_world" customModuleProvider="target">
@@ -758,9 +767,9 @@
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="laG-Dv-Caw">
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sQj-Bj-Sof">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sQj-Bj-Sof" customClass="GenElement" customModule="fastest_world" customModuleProvider="target">
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Damn son... Take a chill pill&quot;" textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FL7-mE-HbG">
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Damn son... Take a chill pill&quot;" textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FL7-mE-HbG">
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="263" id="LIa-Wc-PXu"/>
                                                 </constraints>
@@ -777,25 +786,32 @@
                                             <constraint firstAttribute="height" constant="100" id="oPq-72-SvN"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y67-UK-dXB">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y67-UK-dXB" customClass="GenElement" customModule="fastest_world" customModuleProvider="target">
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="78%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9E-1d-R8J">
-                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="77"/>
-                                                <color key="textColor" red="0.99215686274509807" green="0.91764705882352937" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Were faster than" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeP-0P-C0B">
-                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
-                                                <color key="textColor" red="0.99215686274509807" green="0.91764705882352937" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="QpI-m2-aeJ">
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Were faster than" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeP-0P-C0B">
+                                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                                                        <color key="textColor" red="0.99215686274509807" green="0.91764705882352937" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="78%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9E-1d-R8J">
+                                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="77"/>
+                                                        <color key="textColor" red="0.99215686274509807" green="0.91764705882352937" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Of users" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nw-To-vzf">
+                                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="19"/>
+                                                        <color key="textColor" red="0.99215686274509807" green="0.91764705882352937" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="W9E-1d-R8J" firstAttribute="centerY" secondItem="y67-UK-dXB" secondAttribute="centerY" id="9Dr-1K-coe"/>
-                                            <constraint firstItem="W9E-1d-R8J" firstAttribute="top" secondItem="EeP-0P-C0B" secondAttribute="bottom" constant="15" id="IHC-9q-QfR"/>
-                                            <constraint firstItem="W9E-1d-R8J" firstAttribute="centerX" secondItem="y67-UK-dXB" secondAttribute="centerX" id="KMG-kx-w4N"/>
-                                            <constraint firstItem="EeP-0P-C0B" firstAttribute="centerX" secondItem="y67-UK-dXB" secondAttribute="centerX" id="PJg-qB-nNf"/>
+                                            <constraint firstItem="QpI-m2-aeJ" firstAttribute="centerY" secondItem="y67-UK-dXB" secondAttribute="centerY" id="8QM-wi-Bfj"/>
+                                            <constraint firstItem="QpI-m2-aeJ" firstAttribute="centerX" secondItem="y67-UK-dXB" secondAttribute="centerX" id="Rg0-I7-OSw"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfy-bB-TrG">
@@ -843,7 +859,7 @@
                         <viewControllerLayoutGuide type="bottom" id="5jH-rf-eKF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Vim-Id-HdQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="XaK-cV-wz1">
@@ -946,7 +962,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sJ0-NP-boS"/>
-        <segue reference="lN1-6n-nS4"/>
+        <segue reference="Ocl-33-JZp"/>
         <segue reference="gm2-rh-NzN"/>
     </inferredMetricsTieBreakers>
 </document>
