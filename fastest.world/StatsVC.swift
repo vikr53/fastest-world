@@ -27,7 +27,11 @@ class StatsVC: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         if shouldDisplayAd {
-            self.interstitial.present(fromRootViewController: self)
+            if self.interstitial.isReady {
+                self.interstitial.present(fromRootViewController: self)
+            } else {
+                print("VIK: Add was not ready")
+            }
         }
     }
     override func viewDidLoad() {

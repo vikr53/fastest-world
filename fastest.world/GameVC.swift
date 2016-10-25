@@ -182,7 +182,7 @@ class GameVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let rand = drand48() * 3
         print("VIK: Random number that determines ad display - \(rand)")
-        if rand < 2.0 {
+        if rand < 1.5 {
             print("VIK: Ad will be shown")
             let secondVC: StatsVC = segue.destination as! StatsVC
             secondVC.shouldDisplayAd = true
