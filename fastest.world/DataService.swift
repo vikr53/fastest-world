@@ -84,6 +84,25 @@ class DataService {
             self._REF_BASE.child("scores").updateChildValues(userData2)
             print("VIK2: Updated scores child")
          })
+        
+        //update best scores
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        self._REF_USERS.child(uid!).child("best_score").observeSingleEvent(of: .value, with: { snapshot in
+            if let bestScore = snapshot.value as? Int {
+                if bestScore < points {
+                    //update best score
+                    let updatedScoreData = ["best_score": points]
+                    self._REF_USERS.child(uid!).updateChildValues(updatedScoreData)
+                } else {
+                    //do nothing
+                    print("Not high enough to change")
+                }
+            } else {
+                // best score child does not exist
+                let createNewBestScoreData = ["best_score": points]
+                self._REF_USERS.child(uid!).updateChildValues(createNewBestScoreData)
+            }
+        })
     }
     
     /* func doesUserExist(uid: String) -> Bool {
@@ -128,6 +147,14 @@ class DataService {
             }
         })
         
+    }
+    
+    func attempts5Renew() {
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        
+        print("VIKP: Adding 5 attempts to user in db")
+        let newAttemptsData: Dictionary<String, String> = ["attempts": String(5)]
+        _REF_USERS.child(uid!).updateChildValues(newAttemptsData)
     }
     
 }

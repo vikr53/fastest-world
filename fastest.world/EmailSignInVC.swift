@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class EmailSignInVC: UIViewController {
+class EmailSignInVC: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var emailField: UITextField!
@@ -21,6 +21,8 @@ class EmailSignInVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.emailField.delegate = self
+        self.pwdField.delegate = self
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -34,6 +36,11 @@ class EmailSignInVC: UIViewController {
         
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     func pwdtextFieldDidChange (_ textField: UITextField){

@@ -19,26 +19,31 @@ class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     var unames = [String]()
     var scores = [String]()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         ref.child("scores").queryOrderedByValue().queryLimited(toFirst: 100).observe(.value, with: { snapshot in
-            print("VIK: There are \(snapshot.childrenCount) scores")
+            print("VIKl: There are \(snapshot.childrenCount) scores")
             let enumerator = snapshot.children
             var count: Int = 0
             while let score = enumerator.nextObject() as? FIRDataSnapshot {
-                print("VIK: \(count)")
-                print("VIK: \(score.key)")
-                print("VIK: \(score.value)")
+                print("VIKl: \(count)")
+                print("VIKl: \(score.key)")
+                print("VIKl: \(score.value!)")
                 self.unames.append(score.key)
                 self.scores.append(String(-(score.value as! Int)))
-                print("VIK: \(self.unames[0])")
+                print("VIKl: \(self.unames[0])")
                 count = count + 1
             }
+            print("VIKl: Users - \(self.unames)")
+            print("VIKl: Scores - \(self.scores)")
+            self.tableView.reloadData()
         })
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,13 +52,16 @@ class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("VIKl : Count - \(unames.count)")
+        
         return unames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("VIKl: Entered the tableview func")
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCell
         var cellBorderColor: UIColor = UIColor.yellow
-        print("VIK: \(indexPath.row)")
+        print("VIKl: \(indexPath.row)")
         if indexPath.row >= 0 && indexPath.row < 10 {
             cell.medalImage.image = UIImage(named: "smallBlueBadge")
             cell.unameLabel.text = unames[indexPath.row]

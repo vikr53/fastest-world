@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+
 class StatsVC: UIViewController {
     
     @IBOutlet weak var commentLabel: UILabel!
@@ -115,7 +116,7 @@ class StatsVC: UIViewController {
     }
     
     private func createAndLoadInterstitial() {
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-6428150896277982/2683783956")
         let request = GADRequest()
         request.testDevices = [ kGADSimulatorID ]
         interstitial.load(request)

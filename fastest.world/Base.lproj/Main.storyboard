@@ -134,7 +134,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lep-IU-xAD">
                                         <constraints>
@@ -318,7 +318,7 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tjU-d8-xOH" customClass="GenElement" customModule="fastest_world" customModuleProvider="target">
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="kU9-bP-Ngv">
+                                            <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" distribution="fillProportionally" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="kU9-bP-Ngv">
                                                 <subviews>
                                                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock_icon" translatesAutoresizingMaskIntoConstraints="NO" id="a0p-fe-bsd"/>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:20:43" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dk7-qI-1Up">
@@ -329,6 +329,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.25646265203937268" green="0.31944570461942579" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="a0p-fe-bsd" firstAttribute="leading" secondItem="kU9-bP-Ngv" secondAttribute="leading" id="OjC-Gb-q1A"/>
                                                     <constraint firstAttribute="height" constant="25" id="YdC-ef-CiN"/>
                                                     <constraint firstItem="Dk7-qI-1Up" firstAttribute="centerY" secondItem="kU9-bP-Ngv" secondAttribute="centerY" id="plh-dC-951"/>
                                                 </constraints>
@@ -343,9 +344,9 @@
                                                         </constraints>
                                                     </imageView>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RSy-fi-byV">
-                                                        <state key="normal" image="buyMoreBtn"/>
+                                                        <state key="normal" image="watchAdGraphic"/>
                                                         <connections>
-                                                            <action selector="buyMoreBtnTapped:" destination="9oX-75-HHE" eventType="touchUpInside" id="A63-Fp-MP3"/>
+                                                            <action selector="watchAdBtnTapped:" destination="9oX-75-HHE" eventType="touchUpInside" id="KCX-6s-Rxw"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -389,7 +390,7 @@
                                                     <segue destination="Osi-RH-imr" kind="show" identifier="goToGame" id="429-hc-hf5"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57i-rI-iBe">
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57i-rI-iBe">
                                                 <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
                                                 <color key="textColor" red="0.42352941176470588" green="0.42352941176470588" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -446,7 +447,7 @@
                         <outlet property="animationViewAttempts" destination="qDG-E3-9NX" id="N0t-3g-Tex"/>
                         <outlet property="animationViewPoints" destination="jh0-KS-CLk" id="npN-cN-pI4"/>
                         <outlet property="attemptsImageView" destination="7jW-gK-boi" id="TUA-oD-tZu"/>
-                        <outlet property="buyMoreBtn" destination="RSy-fi-byV" id="uVE-ho-XZn"/>
+                        <outlet property="bestScoreLabel" destination="57i-rI-iBe" id="O9Q-vK-4Yd"/>
                         <outlet property="clockImage" destination="a0p-fe-bsd" id="4t6-HD-H56"/>
                         <outlet property="lightningBoltView" destination="PRS-M4-Wdh" id="UQO-BC-iqN"/>
                         <outlet property="medalImageView" destination="4pP-pP-1N3" id="7Cy-Do-pDX"/>
@@ -456,12 +457,103 @@
                         <outlet property="timeLeftLabel" destination="Dk7-qI-1Up" id="tdp-ML-2As"/>
                         <outlet property="unameLabel" destination="Pya-wi-hcG" id="6cI-2E-48U"/>
                         <outlet property="userScoreLabel" destination="4y6-c4-osY" id="Ixb-dV-tQW"/>
+                        <outlet property="watchAdBtn" destination="RSy-fi-byV" id="FRH-TS-MN1"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="Ocl-33-JZp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfD-2X-e0E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-22.5" y="1404.9295774647887"/>
+        </scene>
+        <!--Fastest ProductsVC-->
+        <scene sceneID="gxv-IM-9FB">
+            <objects>
+                <viewController id="DN5-0L-QgE" customClass="FastestProductsVC" customModule="fastest_world" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RNF-oZ-5Eb"/>
+                        <viewControllerLayoutGuide type="bottom" id="jOM-QT-X5d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uV3-kg-Mek">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Lsi-OO-97P">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="purchaseHeader" translatesAutoresizingMaskIntoConstraints="NO" id="aE0-Nb-H8L"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Zwj-p8-tIm">
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QKr-Kg-iJ8" customClass="GenElement" customModule="fastest_world" customModuleProvider="target">
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PRx-wT-nLT">
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="102" id="Ees-jz-Vpu"/>
+                                                            <constraint firstAttribute="width" constant="101" id="RGk-JV-r9W"/>
+                                                        </constraints>
+                                                        <state key="normal" image="buy5Attempts"/>
+                                                        <connections>
+                                                            <action selector="buy5AttemptsTapped:" destination="DN5-0L-QgE" eventType="touchUpInside" id="M0v-ex-L3l"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="PRx-wT-nLT" firstAttribute="centerX" secondItem="QKr-Kg-iJ8" secondAttribute="centerX" id="BtJ-gb-AOg"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nG7-iv-grx" customClass="GenElement" customModule="fastest_world" customModuleProvider="target">
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llL-Gu-TFv">
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="101" id="9dg-Ej-sZl"/>
+                                                            <constraint firstAttribute="height" constant="81" id="9le-OE-iNL"/>
+                                                        </constraints>
+                                                        <state key="normal" image="buy10Attempts"/>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="llL-Gu-TFv" firstAttribute="centerY" secondItem="nG7-iv-grx" secondAttribute="centerY" id="9YH-ac-UQ7"/>
+                                                    <constraint firstItem="llL-Gu-TFv" firstAttribute="centerX" secondItem="nG7-iv-grx" secondAttribute="centerX" id="SrP-AN-PcB"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="PRx-wT-nLT" firstAttribute="top" secondItem="llL-Gu-TFv" secondAttribute="top" id="WLM-7s-HsY"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cue-Nt-hWG">
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="130" id="bN0-Bh-p4b"/>
+                                            <constraint firstAttribute="width" constant="83" id="wba-dR-XAn"/>
+                                        </constraints>
+                                        <state key="normal" image="homeBtn"/>
+                                        <connections>
+                                            <segue destination="9oX-75-HHE" kind="show" id="CMH-Pd-jPC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Zwj-p8-tIm" secondAttribute="trailing" constant="2" id="2Dj-5q-j6u"/>
+                                    <constraint firstItem="Zwj-p8-tIm" firstAttribute="leading" secondItem="Lsi-OO-97P" secondAttribute="leading" constant="2" id="lSe-7q-rhB"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Lsi-OO-97P" secondAttribute="trailing" constant="12" id="3OD-pJ-fpT"/>
+                            <constraint firstItem="Lsi-OO-97P" firstAttribute="leading" secondItem="uV3-kg-Mek" secondAttribute="leading" constant="12" id="56j-iA-0vS"/>
+                            <constraint firstItem="Lsi-OO-97P" firstAttribute="top" secondItem="RNF-oZ-5Eb" secondAttribute="bottom" constant="16" id="KIM-w8-sme"/>
+                            <constraint firstItem="jOM-QT-X5d" firstAttribute="top" secondItem="Lsi-OO-97P" secondAttribute="bottom" constant="16" id="c6c-H3-oOb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buy10Btn" destination="llL-Gu-TFv" id="gYA-gG-oZI"/>
+                        <outlet property="buy5Btn" destination="PRx-wT-nLT" id="NWp-3s-VOu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zhv-P6-SkX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-866.25" y="1405.9859154929577"/>
         </scene>
         <!--LeaderboardVC-->
         <scene sceneID="kon-Kz-oPN">
@@ -877,7 +969,7 @@
                                             <constraint firstAttribute="width" constant="128" id="MHe-H5-bnK"/>
                                             <constraint firstAttribute="height" constant="128" id="S2R-ta-4VJ"/>
                                         </constraints>
-                                        <state key="normal" image="Logo"/>
+                                        <state key="normal" image="homeBtn"/>
                                         <connections>
                                             <segue destination="9oX-75-HHE" kind="show" id="sJ0-NP-boS"/>
                                         </connections>
@@ -998,32 +1090,36 @@
         <image name="Group 5" width="375" height="128"/>
         <image name="Logo" width="128" height="128"/>
         <image name="bestScoreGraphic" width="37" height="23"/>
-        <image name="buyMoreBtn" width="72" height="101"/>
+        <image name="buy10Attempts" width="130" height="95"/>
+        <image name="buy5Attempts" width="130" height="131"/>
         <image name="clock_icon" width="30" height="31"/>
         <image name="emailLoginBtn" width="140" height="153"/>
         <image name="facebookLoginBtn" width="140" height="153"/>
         <image name="fastest &lt;.world&gt;" width="229" height="59"/>
         <image name="feedGrey" width="36" height="40"/>
         <image name="feedYellow" width="36" height="40"/>
+        <image name="homeBtn" width="83" height="83"/>
         <image name="leaderboardGrey" width="45" height="38"/>
         <image name="leaderboardYellow" width="45" height="38"/>
         <image name="lightningBolt" width="36" height="128"/>
         <image name="lightningPoints" width="27" height="53"/>
         <image name="loginBtn02" width="183" height="69"/>
         <image name="login_x_bar" width="292" height="11"/>
+        <image name="purchaseHeader" width="296" height="10"/>
         <image name="signout" width="35" height="57"/>
         <image name="signupBtn01" width="183" height="69"/>
         <image name="smallBlueBadge" width="66" height="66"/>
         <image name="submitBtn" width="143" height="55"/>
         <image name="usernameBar" width="179" height="10"/>
+        <image name="watchAdGraphic" width="99" height="116"/>
         <image name="yellowBadge" width="66" height="102"/>
         <image name="yellowCheck" width="89" height="83"/>
         <image name="yellowDot" width="110" height="110"/>
         <image name="yellowHighlighted" width="14" height="35"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gm2-rh-NzN"/>
+        <segue reference="CMH-Pd-jPC"/>
         <segue reference="Ocl-33-JZp"/>
-        <segue reference="sJ0-NP-boS"/>
+        <segue reference="gm2-rh-NzN"/>
     </inferredMetricsTieBreakers>
 </document>

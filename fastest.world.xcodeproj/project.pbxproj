@@ -18,10 +18,16 @@
 		A93141561D84C4F000B4AFBE /* fastest_world.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A93141541D84C4F000B4AFBE /* fastest_world.xcdatamodeld */; };
 		A93141581D84C4F000B4AFBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A93141571D84C4F000B4AFBE /* Assets.xcassets */; };
 		A93141661D84C4F000B4AFBE /* fastest_worldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93141651D84C4F000B4AFBE /* fastest_worldTests.swift */; };
-		A93141711D84CF3F00B4AFBE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A93141701D84CF3F00B4AFBE /* GoogleService-Info.plist */; };
-		A93141721D84CF3F00B4AFBE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A93141701D84CF3F00B4AFBE /* GoogleService-Info.plist */; };
 		A93BA46E1DA0615C00719710 /* GenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93BA46D1DA0615C00719710 /* GenElement.swift */; };
+		A94BF71E1DC72EE300A2F606 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A94BF71D1DC72EE300A2F606 /* GoogleService-Info.plist */; };
+		A94BF7211DC7316000A2F606 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A94BF7201DC7316000A2F606 /* AVFoundation.framework */; };
+		A94BF7231DC7335300A2F606 /* bgMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94BF7221DC7335300A2F606 /* bgMusic.mp3 */; };
+		A94BF7251DC734EA00A2F606 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A94BF7241DC734EA00A2F606 /* GoogleService-Info.plist */; };
 		A950827F1DA1F1230031E69F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A950827E1DA1F1230031E69F /* HomeVC.swift */; };
+		A963EA741DC0907500D1BC07 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A963EA731DC0907500D1BC07 /* StoreKit.framework */; };
+		A963EA761DC1CE6200D1BC07 /* FastestProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963EA751DC1CE6200D1BC07 /* FastestProductsVC.swift */; };
+		A963EA781DC2A1A000D1BC07 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963EA771DC2A1A000D1BC07 /* IAPHelper.swift */; };
+		A963EA7A1DC2E17900D1BC07 /* FastestProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963EA791DC2E17900D1BC07 /* FastestProducts.swift */; };
 		A97670AC1D96621E001CD254 /* EmailSignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97670AB1D96621E001CD254 /* EmailSignInVC.swift */; };
 		A97670B01D98A623001CD254 /* EmailSignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97670AF1D98A623001CD254 /* EmailSignUpVC.swift */; };
 		A97670B31D98BD90001CD254 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97670B21D98BD90001CD254 /* Constants.swift */; };
@@ -62,9 +68,16 @@
 		A93141611D84C4F000B4AFBE /* fastest.worldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fastest.worldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93141651D84C4F000B4AFBE /* fastest_worldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fastest_worldTests.swift; sourceTree = "<group>"; };
 		A93141671D84C4F000B4AFBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A93141701D84CF3F00B4AFBE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A93BA46D1DA0615C00719710 /* GenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenElement.swift; sourceTree = "<group>"; };
+		A94BF71D1DC72EE300A2F606 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A94BF7201DC7316000A2F606 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A94BF7221DC7335300A2F606 /* bgMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bgMusic.mp3; path = ../../../Downloads/bgMusic.mp3; sourceTree = "<group>"; };
+		A94BF7241DC734EA00A2F606 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../.Trash/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A950827E1DA1F1230031E69F /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		A963EA731DC0907500D1BC07 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		A963EA751DC1CE6200D1BC07 /* FastestProductsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastestProductsVC.swift; sourceTree = "<group>"; };
+		A963EA771DC2A1A000D1BC07 /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
+		A963EA791DC2E17900D1BC07 /* FastestProducts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastestProducts.swift; sourceTree = "<group>"; };
 		A97670AA1D965DCE001CD254 /* fastest.world.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = fastest.world.entitlements; sourceTree = "<group>"; };
 		A97670AB1D96621E001CD254 /* EmailSignInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignInVC.swift; sourceTree = "<group>"; };
 		A97670AF1D98A623001CD254 /* EmailSignUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignUpVC.swift; sourceTree = "<group>"; };
@@ -85,7 +98,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A94BF7211DC7316000A2F606 /* AVFoundation.framework in Frameworks */,
 				B1337E5375FC756CEBCE99C0 /* Pods_fastest_world.framework in Frameworks */,
+				A963EA741DC0907500D1BC07 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +149,7 @@
 		A931414C1D84C4EF00B4AFBE /* fastest.world */ = {
 			isa = PBXGroup;
 			children = (
+				A94BF71F1DC72F3300A2F606 /* Supporting Files */,
 				A97670B61D990B8C001CD254 /* Services */,
 				A97670AA1D965DCE001CD254 /* fastest.world.entitlements */,
 				A97670B11D98BD6A001CD254 /* Util */,
@@ -145,7 +161,8 @@
 				A93141571D84C4F000B4AFBE /* Assets.xcassets */,
 				A931415C1D84C4F000B4AFBE /* Info.plist */,
 				A93141541D84C4F000B4AFBE /* fastest_world.xcdatamodeld */,
-				A93141701D84CF3F00B4AFBE /* GoogleService-Info.plist */,
+				A94BF7241DC734EA00A2F606 /* GoogleService-Info.plist */,
+				A94BF71D1DC72EE300A2F606 /* GoogleService-Info.plist */,
 				A90B980C1D871DCA0075F342 /* Launch_Screen.storyboard */,
 			);
 			path = fastest.world;
@@ -190,8 +207,19 @@
 				A99BDF311DA9BFCE0026C409 /* LeaderboardVC.swift */,
 				A99BDF331DA9CEF20026C409 /* CustomCell.swift */,
 				A924BFE21DACCF46006A4746 /* StatsVC.swift */,
+				A963EA751DC1CE6200D1BC07 /* FastestProductsVC.swift */,
+				A963EA771DC2A1A000D1BC07 /* IAPHelper.swift */,
+				A963EA791DC2E17900D1BC07 /* FastestProducts.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		A94BF71F1DC72F3300A2F606 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A94BF7221DC7335300A2F606 /* bgMusic.mp3 */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		A97670B11D98BD6A001CD254 /* Util */ = {
@@ -213,6 +241,8 @@
 		AF3BD9C8471508BB47343D0F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A94BF7201DC7316000A2F606 /* AVFoundation.framework */,
+				A963EA731DC0907500D1BC07 /* StoreKit.framework */,
 				4E897DB94CC83D7791DD8485 /* Pods_fastest_world.framework */,
 				6DA79A3CF4CB89F16B970E4B /* Pods_fastest_worldTests.framework */,
 			);
@@ -275,10 +305,13 @@
 				TargetAttributes = {
 					A93141491D84C4EF00B4AFBE = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = F528DKCBCX;
+						DevelopmentTeam = 4TNVETENPC;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
 							com.apple.Keychain = {
 								enabled = 1;
 							};
@@ -316,10 +349,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A93141711D84CF3F00B4AFBE /* GoogleService-Info.plist in Resources */,
 				A93141581D84C4F000B4AFBE /* Assets.xcassets in Resources */,
+				A94BF71E1DC72EE300A2F606 /* GoogleService-Info.plist in Resources */,
+				A94BF7231DC7335300A2F606 /* bgMusic.mp3 in Resources */,
 				A90B980D1D871DCA0075F342 /* Launch_Screen.storyboard in Resources */,
 				A93141531D84C4F000B4AFBE /* Main.storyboard in Resources */,
+				A94BF7251DC734EA00A2F606 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,7 +362,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A93141721D84CF3F00B4AFBE /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +467,9 @@
 			files = (
 				A93BA46E1DA0615C00719710 /* GenElement.swift in Sources */,
 				A97670B01D98A623001CD254 /* EmailSignUpVC.swift in Sources */,
+				A963EA7A1DC2E17900D1BC07 /* FastestProducts.swift in Sources */,
 				A9C359CB1DA188FC00389C3B /* TestViewController.swift in Sources */,
+				A963EA761DC1CE6200D1BC07 /* FastestProductsVC.swift in Sources */,
 				A93141501D84C4F000B4AFBE /* SignInVC.swift in Sources */,
 				A931414E1D84C4F000B4AFBE /* AppDelegate.swift in Sources */,
 				A926EE491DA3006000FED310 /* GameVC.swift in Sources */,
@@ -441,6 +477,7 @@
 				A99BDF361DAA07D70026C409 /* leaderboardStyle.swift in Sources */,
 				A99BDF341DA9CEF20026C409 /* CustomCell.swift in Sources */,
 				A9A9C84F1DA1738E00B7E71E /* UnamePopUpVC.swift in Sources */,
+				A963EA781DC2A1A000D1BC07 /* IAPHelper.swift in Sources */,
 				A97670AC1D96621E001CD254 /* EmailSignInVC.swift in Sources */,
 				A97670B31D98BD90001CD254 /* Constants.swift in Sources */,
 				A99BDF321DA9BFCE0026C409 /* LeaderboardVC.swift in Sources */,
@@ -502,8 +539,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: vikram.webdev@gmail.com (GQ7FN5B73N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: vikram.webdev@gmail.com (GQ7FN5B73N)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -553,8 +590,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: vikram.webdev@gmail.com (GQ7FN5B73N)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: vikram.webdev@gmail.com (GQ7FN5B73N)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -582,10 +619,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = fastest.world/fastest.world.entitlements;
-				DEVELOPMENT_TEAM = F528DKCBCX;
+				DEVELOPMENT_TEAM = 4TNVETENPC;
 				INFOPLIST_FILE = fastest.world/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.fastest-world";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vikios.fastest-world";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -598,10 +635,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = fastest.world/fastest.world.entitlements;
-				DEVELOPMENT_TEAM = F528DKCBCX;
+				DEVELOPMENT_TEAM = 4TNVETENPC;
 				INFOPLIST_FILE = fastest.world/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.fastest-world";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.vikios.fastest-world";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

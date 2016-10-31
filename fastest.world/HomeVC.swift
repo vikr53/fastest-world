@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 import Foundation
+import AVFoundation
 
 class HomeVC: UIViewController {
 
@@ -22,13 +23,16 @@ class HomeVC: UIViewController {
     @IBOutlet weak var animationView: UIImageView!
     @IBOutlet weak var animationViewPoints: UIImageView!
     @IBOutlet weak var animationViewAttempts: UIImageView!
-    @IBOutlet weak var buyMoreBtn: UIButton!
+    @IBOutlet weak var watchAdBtn: UIButton!
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var lightningBoltView: UIImageView!
     @IBOutlet weak var playDotView: UIImageView!
     @IBOutlet weak var timeLeftLabel: UILabel!
     @IBOutlet weak var clockImage: UIImageView!
+    @IBOutlet weak var bestScoreLabel: UILabel!
 
+    var backgroundMusicPlayer: AVAudioPlayer = AVAudioPlayer()
+    let url = Bundle.main.url(forResource: "bgMusic", withExtension: "mp3")
     
     let uid = FIRAuth.auth()?.currentUser?.uid
     
@@ -36,11 +40,15 @@ class HomeVC: UIViewController {
     var timeLeft: Int = 0
     var noAttemptsClockCount: Int = 0
     
+    var interstitial: GADInterstitial!
+    
     var dbUname: String = ""
     private var rank: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.createAndLoadInterstitial()
         
         let refSpecificUser : FIRDatabaseReference = FIRDatabase.database().reference().child("users").child(uid!)
         let refScores: FIRDatabaseReference = FIRDatabase.database().reference().child("scores")
@@ -158,7 +166,7 @@ class HomeVC: UIViewController {
                     } else {
                         //need to buy attempts and the stop-clock should start
                         //present buy button and the clock - 30 min
-                        self.buyMoreBtn.isHidden = false
+                        self.watchAdBtn.isHidden = false
                         //disable play btn and change the color of the elements to gray
                         self.playBtn.isEnabled = false
                         self.lightningBoltView.image = UIImage(named: "greyLightningBolt")
@@ -174,9 +182,30 @@ class HomeVC: UIViewController {
                 }
             })
             
+            //Setting best score
+            refSpecificUser.child("best_score").observe(FIRDataEventType.value, with: { snapshot in
+                if let bestScore = snapshot.value as? Int {
+                    self.bestScoreLabel.text = String(bestScore)
+                    self.bestScoreLabel.isHidden = false
+                }
+            })
+            
         })
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //Play Background Music
+        do {
+            backgroundMusicPlayer = try AVAudioPlayer(contentsOf: url!)
+            backgroundMusicPlayer.numberOfLoops = -1
+            backgroundMusicPlayer.prepareToPlay()
+            backgroundMusicPlayer.play()
+            print("VIK: Playing")
+        } catch let error {
+            print(error.localizedDescription)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -200,11 +229,27 @@ class HomeVC: UIViewController {
             let secondVC: GameVC = segue.destination as! GameVC
             secondVC.receivedUname = self.dbUname
         }
+        
+        //Stop music
+        print("VIKm: Performing a segue right now")
+        if(backgroundMusicPlayer.isPlaying) {
+            print("VIKm: Currently playing")
+            backgroundMusicPlayer.pause()
+            print("VIKm: paused the music")
+        }
     }
     
-    @IBAction func buyMoreBtnTapped(_ sender: AnyObject) {
-        
+    @IBAction func watchAdBtnTapped(_ sender: AnyObject) {
+        if self.interstitial.isReady {
+            self.interstitial.present(fromRootViewController: self)
+            //endTimer and add attempts
+            self.timeLeft = -1
+            updateAttemptsClockTimer()
+        } else {
+            print("VIK: Add was not ready")
+        }
     }
+
     
     func timeLeftFunc() {
         let refSpecificUser : FIRDatabaseReference = FIRDatabase.database().reference().child("users").child(uid!)
@@ -238,10 +283,12 @@ class HomeVC: UIViewController {
         if self.timeLeft > 0 {
             //time is not up - stopwatch setup
             self.timeLeft = self.timeLeft - 1
-            let minutes = self.timeLeft/60
-            let seconds = self.timeLeft - (minutes * 60)
-            print("VIK3: Minutes - \(minutes) Seconds - \(seconds)")
-            self.timeLeftLabel.text = "00:\(minutes):\(seconds)"
+            let minutes: Int = self.timeLeft/60
+            let seconds: Int = self.timeLeft - (minutes * 60)
+            let formattedMinutes = String(format: "%02d", minutes)
+            let formattedSeconds = String(format: "%02d", seconds)
+            print("VIK3: Minutes - \(formattedMinutes) Seconds - \(formattedSeconds)")
+            self.timeLeftLabel.text = "00:\(formattedMinutes):\(formattedSeconds)"
             self.timeLeftLabel.isHidden = false
             self.clockImage.isHidden = false
         } else {
@@ -262,7 +309,7 @@ class HomeVC: UIViewController {
             
             self.clockImage.isHidden = true
             self.timeLeftLabel.isHidden = true
-            self.buyMoreBtn.isHidden = true
+            self.watchAdBtn.isHidden = true
             
             self.attemptsImageView.image = UIImage(named: "5Attempt")
             self.attemptsImageView.isHidden = false
@@ -274,6 +321,14 @@ class HomeVC: UIViewController {
             refUsers.child("timeWhenDone").removeValue()
         }
     }
+    
+    private func createAndLoadInterstitial() {
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-6428150896277982/4402692751")
+        let request = GADRequest()
+        request.testDevices = [ kGADSimulatorID ]
+        interstitial.load(request)
+    }
+    
     /*
     // MARK: - Navigation
 
