@@ -12,8 +12,9 @@ import Firebase
 
 class StatsVC: UIViewController {
     
-    @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var percentageLabel: UILabel!
+    @IBOutlet weak var homeBtn: UIButton!
+    
     
     var pointsEarned: Int = 0
     var usersSamePoints: Int = 0
@@ -37,6 +38,22 @@ class StatsVC: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //begin animating button
+        var homeAnimImages = [UIImage]()
+        homeAnimImages.append(UIImage(named: "homeAnim1")!)
+        homeAnimImages.append(UIImage(named: "homeAnim2")!)
+        homeAnimImages.append(UIImage(named: "homeAnim3")!)
+        homeAnimImages.append(UIImage(named: "homeAnim4")!)
+        homeAnimImages.append(UIImage(named: "homeAnim5")!)
+        homeAnimImages.append(UIImage(named: "homeAnim6")!)
+        homeAnimImages.append(UIImage(named: "homeAnim7")!)
+        homeAnimImages.append(UIImage(named: "homeAnim8")!)
+        
+        homeBtn.setImage(homeAnimImages[0], for: UIControlState.normal)
+        homeBtn.imageView!.animationImages = homeAnimImages
+        homeBtn.imageView!.animationDuration = 0.9
+        homeBtn.imageView!.startAnimating()
         
         //determine if ad should be displayed and load or not load the ad
         if shouldDisplayAd {
@@ -92,21 +109,6 @@ class StatsVC: UIViewController {
             //set comment label
             let intPercentage = Int(percentage)
             print("Percentage converted to int = \(intPercentage)")
-            if intPercentage >= 90 && intPercentage <= 100 {
-                self.commentLabel.text = "\"Damn son... Take a chill pill\""
-                self.commentLabel.isHidden = false
-            } else if intPercentage >= 70 && intPercentage < 90 {
-                self.commentLabel.text = "\"Almost there\""
-                self.commentLabel.isHidden = false
-            } else if intPercentage >= 50 && intPercentage < 70 {
-                self.commentLabel.text = "\"Practice makes perfect\""
-                self.commentLabel.isHidden = false
-            } else if intPercentage >= 0 && intPercentage < 50 {
-                self.commentLabel.text = "\"You are faster than that and you know it\""
-                self.commentLabel.isHidden = false
-            } else {
-                print("VIK: ERROR. Did not satisfy any of the above conditions ")
-            }
         })
     }
 

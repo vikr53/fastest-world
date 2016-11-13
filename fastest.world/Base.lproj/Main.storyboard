@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pFf-PV-bSj">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -584,7 +584,7 @@
                                                                 <constraint firstAttribute="width" constant="40" id="EdG-Hf-oq8"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dia-z5-Ph2">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dia-z5-Ph2">
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="35" id="C6c-sa-vPv"/>
                                                             </constraints>
@@ -592,14 +592,14 @@
                                                             <color key="textColor" red="0.17539529009999999" green="0.37487469130000001" blue="0.68289851999999995" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fastman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0V-w4-Lzf">
-                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fastmantygrtdyfyt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U0V-w4-Lzf">
+                                                            <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="15"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPW-nd-Xxh">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPW-nd-Xxh">
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="50" id="49v-N7-6tI"/>
+                                                                <constraint firstAttribute="width" constant="65" id="49v-N7-6tI"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
                                                             <color key="textColor" red="0.17539529009999999" green="0.37487469130000001" blue="0.68289851999999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -917,59 +917,53 @@
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="laG-Dv-Caw">
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sQj-Bj-Sof" customClass="GenElement" customModule="fastest_world" customModuleProvider="target">
-                                        <subviews>
-                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;Damn son... Take a chill pill&quot;" textAlignment="center" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FL7-mE-HbG">
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="263" id="LIa-Wc-PXu"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="22"/>
-                                                <color key="textColor" red="0.95686274509803926" green="0.39215686274509803" blue="0.22352941176470589" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.16470588235294117" green="0.16470588235294117" blue="0.16470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="holdingLightningGraphic" translatesAutoresizingMaskIntoConstraints="NO" id="bck-aL-dMn">
                                         <constraints>
-                                            <constraint firstItem="FL7-mE-HbG" firstAttribute="centerX" secondItem="sQj-Bj-Sof" secondAttribute="centerX" id="2Pe-Vy-XtU"/>
-                                            <constraint firstItem="FL7-mE-HbG" firstAttribute="top" secondItem="sQj-Bj-Sof" secondAttribute="top" constant="15" id="6FJ-VM-Lo2"/>
-                                            <constraint firstItem="FL7-mE-HbG" firstAttribute="centerY" secondItem="sQj-Bj-Sof" secondAttribute="centerY" id="Hfu-Wf-RXD"/>
-                                            <constraint firstAttribute="height" constant="100" id="oPq-72-SvN"/>
+                                            <constraint firstAttribute="height" constant="62" id="KYd-ma-kOP"/>
+                                            <constraint firstAttribute="width" constant="105" id="sDf-nC-q69"/>
                                         </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y67-UK-dXB" customClass="GenElement" customModule="fastest_world" customModuleProvider="target">
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y67-UK-dXB">
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="QpI-m2-aeJ">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="cIA-wY-Gbj">
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Were faster than" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeP-0P-C0B">
-                                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
-                                                        <color key="textColor" red="0.99215686274509807" green="0.91764705882352937" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="statsHeader" translatesAutoresizingMaskIntoConstraints="NO" id="t2e-8q-vBh"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Percentage of user attempts you scored higher than" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJ8-LL-Lot">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="78%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9E-1d-R8J">
-                                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="77"/>
-                                                        <color key="textColor" red="0.99215686274509807" green="0.91764705882352937" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Of users" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nw-To-vzf">
-                                                        <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="19"/>
-                                                        <color key="textColor" red="0.99215686274509807" green="0.91764705882352937" blue="0.035294117647058823" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0Xd-8A-kyN">
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="percentageLightning" translatesAutoresizingMaskIntoConstraints="NO" id="nph-Zp-V6C">
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="90" id="J0Z-0S-Do2"/>
+                                                                </constraints>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="97%" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQJ-DR-yEo">
+                                                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="38"/>
+                                                                <color key="textColor" red="0.95686274510000002" green="0.3921568627" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.1647058824" green="0.1647058824" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.13725490196078433" green="0.13725490196078433" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="QpI-m2-aeJ" firstAttribute="centerY" secondItem="y67-UK-dXB" secondAttribute="centerY" id="8QM-wi-Bfj"/>
-                                            <constraint firstItem="QpI-m2-aeJ" firstAttribute="centerX" secondItem="y67-UK-dXB" secondAttribute="centerX" id="Rg0-I7-OSw"/>
+                                            <constraint firstItem="cIA-wY-Gbj" firstAttribute="leading" secondItem="y67-UK-dXB" secondAttribute="leading" constant="8" id="6m8-Ub-Sph"/>
+                                            <constraint firstItem="cIA-wY-Gbj" firstAttribute="top" secondItem="y67-UK-dXB" secondAttribute="top" constant="20" id="Ln1-rw-9m4"/>
+                                            <constraint firstAttribute="bottom" secondItem="cIA-wY-Gbj" secondAttribute="bottom" constant="20" id="RvQ-I7-d3F"/>
+                                            <constraint firstAttribute="trailing" secondItem="cIA-wY-Gbj" secondAttribute="trailing" constant="8" id="gSk-5C-XP5"/>
+                                            <constraint firstItem="cIA-wY-Gbj" firstAttribute="centerX" secondItem="y67-UK-dXB" secondAttribute="centerX" id="rEt-s2-hEf"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfy-bB-TrG">
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="128" id="MHe-H5-bnK"/>
                                             <constraint firstAttribute="height" constant="128" id="S2R-ta-4VJ"/>
                                         </constraints>
-                                        <state key="normal" image="homeBtn"/>
+                                        <state key="normal" image="homeAnim1"/>
                                         <connections>
                                             <segue destination="9oX-75-HHE" kind="show" id="sJ0-NP-boS"/>
                                         </connections>
@@ -977,9 +971,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="y67-UK-dXB" firstAttribute="leading" secondItem="laG-Dv-Caw" secondAttribute="leading" constant="5" id="648-Ta-FfM"/>
-                                    <constraint firstAttribute="trailing" secondItem="sQj-Bj-Sof" secondAttribute="trailing" constant="5" id="Xsm-SE-Aim"/>
                                     <constraint firstAttribute="trailing" secondItem="y67-UK-dXB" secondAttribute="trailing" constant="5" id="qs3-L2-uts"/>
-                                    <constraint firstItem="sQj-Bj-Sof" firstAttribute="leading" secondItem="laG-Dv-Caw" secondAttribute="leading" constant="5" id="vR8-78-eOO"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -992,13 +984,80 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="commentLabel" destination="FL7-mE-HbG" id="asc-Gn-Q3b"/>
-                        <outlet property="percentageLabel" destination="W9E-1d-R8J" id="JST-D4-jME"/>
+                        <outlet property="homeBtn" destination="tfy-bB-TrG" id="rZq-1c-vih"/>
+                        <outlet property="percentageLabel" destination="TQJ-DR-yEo" id="eGn-cI-EPy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c0V-rP-vOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1885" y="1663"/>
+            <point key="canvasLocation" x="1884.375" y="1662.6760563380283"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="9Mh-wC-UfL">
+            <objects>
+                <viewController id="pFf-PV-bSj" customClass="GameViewController" customModule="fastest_world" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VIt-kI-g30"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gsi-8r-BYg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YLJ-kE-IAl" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pointsGraphic" translatesAutoresizingMaskIntoConstraints="NO" id="CAS-d4-BTF">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="156" id="JeX-Vf-za4"/>
+                                    <constraint firstAttribute="height" constant="52" id="MqT-ya-pSI"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YA3-fI-UrH">
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="+0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2u-Iu-Ny0">
+                                <frame key="frameInset" minX="260" minY="62" width="26" height="14"/>
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="13"/>
+                                <color key="textColor" red="0.92549019607843142" green="0.3843137254901961" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HK1-vN-5jG">
+                                <fontDescription key="fontDescription" name="Copperplate" family="Copperplate" pointSize="12"/>
+                                <color key="textColor" red="0.92549019610000005" green="0.38431372549999998" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKs-9I-3rC">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="AB7-LX-FrC"/>
+                                    <constraint firstAttribute="height" constant="70" id="MbQ-Wa-OtA"/>
+                                </constraints>
+                                <state key="normal" image="powerUp"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="YA3-fI-UrH" secondAttribute="trailing" constant="25" id="4DN-6J-S7e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HK1-vN-5jG" secondAttribute="trailing" constant="50" id="EfF-dK-CLL"/>
+                            <constraint firstAttribute="trailing" secondItem="CAS-d4-BTF" secondAttribute="trailing" id="Hni-Yq-wvs"/>
+                            <constraint firstItem="HK1-vN-5jG" firstAttribute="top" secondItem="VIt-kI-g30" secondAttribute="bottom" constant="65" id="N1Z-Dv-ABb"/>
+                            <constraint firstItem="M2u-Iu-Ny0" firstAttribute="top" secondItem="YA3-fI-UrH" secondAttribute="bottom" constant="8" id="S0L-GZ-UQH"/>
+                            <constraint firstItem="HKs-9I-3rC" firstAttribute="centerY" secondItem="YLJ-kE-IAl" secondAttribute="centerY" id="kv4-sG-qU0"/>
+                            <constraint firstItem="CAS-d4-BTF" firstAttribute="top" secondItem="VIt-kI-g30" secondAttribute="bottom" constant="8" id="m2H-jv-l3Q"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="M2u-Iu-Ny0" secondAttribute="trailing" constant="18" id="oTX-w9-avy"/>
+                            <constraint firstItem="HKs-9I-3rC" firstAttribute="centerX" secondItem="YLJ-kE-IAl" secondAttribute="centerX" id="rl3-Y5-BvH"/>
+                            <constraint firstItem="YA3-fI-UrH" firstAttribute="top" secondItem="VIt-kI-g30" secondAttribute="bottom" constant="16" id="sr3-zw-4pO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bonusLabel" destination="M2u-Iu-Ny0" id="Jrb-VT-wXL"/>
+                        <outlet property="bonusPointsLabel" destination="HK1-vN-5jG" id="BzG-Yj-STK"/>
+                        <outlet property="pointsLabel" destination="YA3-fI-UrH" id="Iz4-Ia-O7z"/>
+                        <segue destination="2ZX-AV-EEc" kind="show" identifier="goToStats" id="Wkv-lX-NbG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ee-qg-yMU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1014.375" y="2207.7464788732395"/>
         </scene>
         <!--Email Sign UpVC-->
         <scene sceneID="jLB-MZ-WQm">
@@ -1098,17 +1157,23 @@
         <image name="fastest &lt;.world&gt;" width="229" height="59"/>
         <image name="feedGrey" width="36" height="40"/>
         <image name="feedYellow" width="36" height="40"/>
-        <image name="homeBtn" width="83" height="83"/>
+        <image name="holdingLightningGraphic" width="105" height="96"/>
+        <image name="homeAnim1" width="173" height="63"/>
+        <image name="homeBtn" width="91" height="91"/>
         <image name="leaderboardGrey" width="45" height="38"/>
         <image name="leaderboardYellow" width="45" height="38"/>
         <image name="lightningBolt" width="36" height="128"/>
         <image name="lightningPoints" width="27" height="53"/>
         <image name="loginBtn02" width="183" height="69"/>
         <image name="login_x_bar" width="292" height="11"/>
+        <image name="percentageLightning" width="64" height="64"/>
+        <image name="pointsGraphic" width="156" height="57"/>
+        <image name="powerUp" width="130" height="130"/>
         <image name="purchaseHeader" width="296" height="10"/>
         <image name="signout" width="35" height="57"/>
         <image name="signupBtn01" width="183" height="69"/>
         <image name="smallBlueBadge" width="66" height="66"/>
+        <image name="statsHeader" width="296" height="10"/>
         <image name="submitBtn" width="143" height="55"/>
         <image name="usernameBar" width="179" height="10"/>
         <image name="watchAdGraphic" width="99" height="116"/>
@@ -1118,8 +1183,9 @@
         <image name="yellowHighlighted" width="14" height="35"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CMH-Pd-jPC"/>
         <segue reference="Ocl-33-JZp"/>
+        <segue reference="sJ0-NP-boS"/>
+        <segue reference="Wkv-lX-NbG"/>
         <segue reference="gm2-rh-NzN"/>
     </inferredMetricsTieBreakers>
 </document>
