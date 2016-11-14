@@ -2,8 +2,8 @@
 //  DataService.swift
 //  fastest.world
 //
-//  Created by RamR on 9/26/16.
-//  Copyright © 2016 VikramR. All rights reserved.
+//  Created by Vikram Ramanathan on 9/26/16.
+//  Copyright © 2016 Vikram Ramanathan. All rights reserved.
 //
 
 import Foundation

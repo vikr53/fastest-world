@@ -2,8 +2,8 @@
 //  StatsVC.swift
 //  fastest.world
 //
-//  Created by RamR on 10/11/16.
-//  Copyright © 2016 VikramR. All rights reserved.
+//  Created by Vikram Ramanathan on 10/11/16.
+//  Copyright © 2016 Vikram Ramanathan. All rights reserved.
 //
 
 import UIKit
