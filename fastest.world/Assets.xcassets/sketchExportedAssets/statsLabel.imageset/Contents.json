@@ -2,17 +2,13 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "iPhone 7.png",
+      "filename" : "statsLabel.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "iPhone 7@2x.png",
+      "filename" : "statsLabel@2x.png",
       "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
     }
   ],
   "info" : {

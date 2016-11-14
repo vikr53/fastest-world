@@ -42,7 +42,7 @@ class DataService {
         var dbRetreivedPoints: Int = 0
         
         //retreive the current stats
-        self._REF_STATS.observeSingleEvent(of: .value, with: { snapshot in
+        /*self._REF_STATS.observeSingleEvent(of: .value, with: { snapshot in
             print("VIK: enterd stats child")
             var dbRetreivedData: Int = 0
             print("VIK: User received \(points) points")
@@ -58,7 +58,7 @@ class DataService {
             let userData: Dictionary<String, Int> = [ String(points): dbRetreivedData ]
             self._REF_STATS.updateChildValues(userData)
             print("VIK: Updated stat child")
-        })
+        })*/
     
         //get current points
         self._REF_SCORES.observeSingleEvent(of: .value, with: { snapshot in

@@ -12,11 +12,13 @@ import Firebase
 
 class StatsVC: UIViewController {
     
-    @IBOutlet weak var percentageLabel: UILabel!
     @IBOutlet weak var homeBtn: UIButton!
-    
+    @IBOutlet weak var pointsLabel: UILabel!
+    @IBOutlet weak var bonusLabel: UILabel!
+    @IBOutlet weak var totalPointsLabel: UILabel!
     
     var pointsEarned: Int = 0
+    var bonusPointsEarned: Int = 0
     var usersSamePoints: Int = 0
     var totalNoAt: Int = 0
     var refStats: FIRDatabaseReference = FIRDatabase.database().reference().child("stats")
@@ -63,7 +65,7 @@ class StatsVC: UIViewController {
         print("VIK: \(pointsEarned)")
 
         //get stats from the database
-        refStats.observeSingleEvent(of: .value, with: { snapshot in
+        /*refStats.observeSingleEvent(of: .value, with: { snapshot in
             print("VIK: There are \(snapshot.childrenCount) in stats node")
             let enumerator = snapshot.children
             var counter: Int = 0
@@ -105,11 +107,17 @@ class StatsVC: UIViewController {
             //set percentage label
             self.percentageLabel.text = String(format: "%.1f", percentage) + "%"
             self.percentageLabel.isHidden = false
-            
-            //set comment label
-            let intPercentage = Int(percentage)
-            print("Percentage converted to int = \(intPercentage)")
-        })
+        })*/
+    
+        //set points label
+        self.pointsLabel.text = String(self.pointsEarned)
+        self.pointsLabel.isHidden = false
+        //set bonus label
+        self.bonusLabel.text = String(self.bonusPointsEarned)
+        self.bonusLabel.isHidden = false
+        //set total points label
+        self.totalPointsLabel.text = String(self.pointsEarned + self.bonusPointsEarned)
+        self.totalPointsLabel.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {

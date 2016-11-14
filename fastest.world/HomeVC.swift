@@ -226,7 +226,7 @@ class HomeVC: UIViewController {
             let secondVC: LeaderboardVC = segue.destination as! LeaderboardVC
             secondVC.receivedUname = self.dbUname
         } else if (segue.identifier == "goToGame") {
-            let secondVC: GameVC = segue.destination as! GameVC
+            let secondVC: GameViewController = segue.destination as! GameViewController
             secondVC.receivedUname = self.dbUname
         }
         
@@ -265,8 +265,8 @@ class HomeVC: UIViewController {
                 self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(HomeVC.updateAttemptsClockTimer), userInfo: nil, repeats: true)
             } else {
                 //it does not exist and should be created
-                self.timeLeft = (60*3)
-                let timeWhenDone = timeNow + (60*3)
+                self.timeLeft = (60*30)
+                let timeWhenDone = timeNow + (60*30)
                 print("VIK3: \(timeNow)")
                 //update timeWhenDone in db
                 let userData: Dictionary<String, Int> = ["timeWhenDone": Int(timeWhenDone)]
