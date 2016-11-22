@@ -41,6 +41,16 @@ class StatsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //set points label
+        self.pointsLabel.text = String(self.pointsEarned)
+        self.pointsLabel.isHidden = false
+        //set bonus label
+        self.bonusLabel.text = String(self.bonusPointsEarned)
+        self.bonusLabel.isHidden = false
+        //set total points label
+        self.totalPointsLabel.text = String(self.pointsEarned + self.bonusPointsEarned)
+        self.totalPointsLabel.isHidden = false
+        
         //begin animating button
         var homeAnimImages = [UIImage]()
         homeAnimImages.append(UIImage(named: "homeAnim1")!)
@@ -108,16 +118,6 @@ class StatsVC: UIViewController {
             self.percentageLabel.text = String(format: "%.1f", percentage) + "%"
             self.percentageLabel.isHidden = false
         })*/
-    
-        //set points label
-        self.pointsLabel.text = String(self.pointsEarned)
-        self.pointsLabel.isHidden = false
-        //set bonus label
-        self.bonusLabel.text = String(self.bonusPointsEarned)
-        self.bonusLabel.isHidden = false
-        //set total points label
-        self.totalPointsLabel.text = String(self.pointsEarned + self.bonusPointsEarned)
-        self.totalPointsLabel.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -130,6 +130,18 @@ class StatsVC: UIViewController {
         let request = GADRequest()
         request.testDevices = [ kGADSimulatorID ]
         interstitial.load(request)
+    }
+    
+    @IBAction func returnBtnPressed(_ sender: AnyObject) {
+        FIRAuth.auth()?.addStateDidChangeListener { auth, user in
+            if let user = user {
+                // User is signed in.
+                self.performSegue(withIdentifier: "goToHome", sender: nil)
+            } else {
+                // No user is signed in.
+                self.performSegue(withIdentifier: "goToSignIn", sender: nil)
+            }
+        }
     }
     
     /*

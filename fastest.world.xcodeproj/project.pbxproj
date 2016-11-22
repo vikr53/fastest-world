@@ -36,6 +36,7 @@
 		A99BDF341DA9CEF20026C409 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99BDF331DA9CEF20026C409 /* CustomCell.swift */; };
 		A99BDF361DAA07D70026C409 /* leaderboardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99BDF351DAA07D70026C409 /* leaderboardStyle.swift */; };
 		A9A9C84F1DA1738E00B7E71E /* UnamePopUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A9C84E1DA1738D00B7E71E /* UnamePopUpVC.swift */; };
+		A9E2C9131DE41E86007086A7 /* fromLeftToRightSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E2C9121DE41E86007086A7 /* fromLeftToRightSegue.swift */; };
 		B1337E5375FC756CEBCE99C0 /* Pods_fastest_world.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E897DB94CC83D7791DD8485 /* Pods_fastest_world.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		A99BDF331DA9CEF20026C409 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		A99BDF351DAA07D70026C409 /* leaderboardStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = leaderboardStyle.swift; sourceTree = "<group>"; };
 		A9A9C84E1DA1738D00B7E71E /* UnamePopUpVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnamePopUpVC.swift; sourceTree = "<group>"; };
+		A9E2C9121DE41E86007086A7 /* fromLeftToRightSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = fromLeftToRightSegue.swift; sourceTree = "<group>"; };
 		AFE47FD24EB60123982D83B0 /* Pods-fastest.world.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fastest.world.release.xcconfig"; path = "Pods/Target Support Files/Pods-fastest.world/Pods-fastest.world.release.xcconfig"; sourceTree = "<group>"; };
 		C554EB7B0B26E6ECECE71E2F /* Pods-fastest.worldTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fastest.worldTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fastest.worldTests/Pods-fastest.worldTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EA4899411054106D1F0B7FBA /* Pods-fastest.world.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fastest.world.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fastest.world/Pods-fastest.world.debug.xcconfig"; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				A93BA46D1DA0615C00719710 /* GenElement.swift */,
 				A907A5AA1DA1D1F900192DBD /* RoundedCornerView.swift */,
 				A99BDF351DAA07D70026C409 /* leaderboardStyle.swift */,
+				A9E2C9121DE41E86007086A7 /* fromLeftToRightSegue.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				A97670B01D98A623001CD254 /* EmailSignUpVC.swift in Sources */,
 				A93141501D84C4F000B4AFBE /* SignInVC.swift in Sources */,
 				A931414E1D84C4F000B4AFBE /* AppDelegate.swift in Sources */,
+				A9E2C9131DE41E86007086A7 /* fromLeftToRightSegue.swift in Sources */,
 				A94BF7691DC89AE200A2F606 /* GameViewController.swift in Sources */,
 				A93141561D84C4F000B4AFBE /* fastest_world.xcdatamodeld in Sources */,
 				A99BDF361DAA07D70026C409 /* leaderboardStyle.swift in Sources */,

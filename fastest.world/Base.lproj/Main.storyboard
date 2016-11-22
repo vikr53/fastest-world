@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -16,50 +16,20 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sSi-Bs-6CU">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="sSi-Bs-6CU">
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aye-ka-WRC">
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 5" translatesAutoresizingMaskIntoConstraints="NO" id="Qk0-Qb-hpZ">
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="140" id="JMx-Da-Y7M"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.13725490196078433" green="0.13725490196078433" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="Qk0-Qb-hpZ" firstAttribute="top" secondItem="Aye-ka-WRC" secondAttribute="top" id="3mq-cx-BWW"/>
-                                            <constraint firstItem="Qk0-Qb-hpZ" firstAttribute="leading" secondItem="Aye-ka-WRC" secondAttribute="leading" id="HWb-HY-sLm"/>
-                                            <constraint firstAttribute="trailing" secondItem="Qk0-Qb-hpZ" secondAttribute="trailing" id="Ktj-LZ-48T"/>
-                                            <constraint firstItem="Qk0-Qb-hpZ" firstAttribute="centerY" secondItem="Aye-ka-WRC" secondAttribute="centerY" id="WLs-Xh-2Wb"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="HBt-NR-z3d">
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fastest &lt;.world&gt;" translatesAutoresizingMaskIntoConstraints="NO" id="KXQ-TU-E5J"/>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.13725490196078433" green="0.13725490196078433" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="KXQ-TU-E5J" firstAttribute="centerY" secondItem="HBt-NR-z3d" secondAttribute="centerY" id="8ry-Ss-6C3"/>
-                                            <constraint firstItem="KXQ-TU-E5J" firstAttribute="top" secondItem="HBt-NR-z3d" secondAttribute="top" constant="-30" id="9xf-mn-CG7"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="IEa-Zz-1JW"/>
-                                            <constraint firstItem="KXQ-TU-E5J" firstAttribute="centerX" secondItem="HBt-NR-z3d" secondAttribute="centerX" id="ipp-P6-sda"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nuh-p7-sLQ">
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_x_bar" translatesAutoresizingMaskIntoConstraints="NO" id="i7f-vF-T2a"/>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.13725490196078433" green="0.13725490196078433" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="i7f-vF-T2a" firstAttribute="centerX" secondItem="nuh-p7-sLQ" secondAttribute="centerX" id="cJF-Dm-dfo"/>
-                                            <constraint firstItem="i7f-vF-T2a" firstAttribute="centerY" secondItem="nuh-p7-sLQ" secondAttribute="centerY" id="ePK-XX-bxR"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="180" id="jWn-WB-ewL"/>
-                                        </constraints>
-                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 5" translatesAutoresizingMaskIntoConstraints="NO" id="Qk0-Qb-hpZ"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fastest &lt;.world&gt;" translatesAutoresizingMaskIntoConstraints="NO" id="KXQ-TU-E5J"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGU-7E-TAc">
+                                        <state key="normal" image="playNow"/>
+                                        <connections>
+                                            <segue destination="pFf-PV-bSj" kind="custom" identifier="goToGame" customClass="fromLeftToRightSegue" customModule="fastest_world" customModuleProvider="target" id="v6K-1P-zkh"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_x_bar" translatesAutoresizingMaskIntoConstraints="NO" id="i7f-vF-T2a"/>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Jh1-Qg-0t6">
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQ9-cq-d5V">
@@ -80,17 +50,13 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="nuh-p7-sLQ" secondAttribute="trailing" id="IEY-fk-kyn"/>
-                                    <constraint firstItem="nuh-p7-sLQ" firstAttribute="leading" secondItem="sSi-Bs-6CU" secondAttribute="leading" id="xL8-Sg-6Bh"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.13725490196078433" green="0.13725490196078433" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="sSi-Bs-6CU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="IEJ-19-57o"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sSi-Bs-6CU" secondAttribute="bottom" constant="20" id="gVE-t7-cMo"/>
-                            <constraint firstItem="sSi-Bs-6CU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="30" id="iWl-hr-vh2"/>
+                            <constraint firstItem="sSi-Bs-6CU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="iWl-hr-vh2"/>
                             <constraint firstAttribute="trailing" secondItem="sSi-Bs-6CU" secondAttribute="trailing" id="wfh-Fe-SJy"/>
                         </constraints>
                     </view>
@@ -111,7 +77,7 @@
                         <viewControllerLayoutGuide type="bottom" id="tm7-Gb-yxm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Gcz-bI-doL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="qiy-LA-wLx">
@@ -193,7 +159,7 @@
                         <viewControllerLayoutGuide type="bottom" id="xGY-4F-boQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="I9I-Gu-X33">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GMZ-45-azz" customClass="GenElement" customModule="fastest_world" customModuleProvider="target">
@@ -474,7 +440,7 @@
                         <viewControllerLayoutGuide type="bottom" id="jOM-QT-X5d"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uV3-kg-Mek">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Lsi-OO-97P">
@@ -564,17 +530,17 @@
                         <viewControllerLayoutGuide type="bottom" id="cOb-Ze-ETw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5ke-me-8LL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4gJ-tg-h1v" customClass="leaderboardStyle" customModule="fastest_world" customModuleProvider="target">
                                 <color key="backgroundColor" red="0.13725490200000001" green="0.13725490200000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="45" id="uS4-pA-Cc5" customClass="CustomCell" customModule="fastest_world" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="45"/>
+                                        <rect key="frame" x="0.0" y="28" width="288" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uS4-pA-Cc5" id="em8-uY-Z5h">
-                                            <frame key="frameInset" width="343" height="45"/>
+                                            <frame key="frameInset" width="288" height="45"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CCk-s1-zcc">
@@ -703,7 +669,7 @@
                         <viewControllerLayoutGuide type="bottom" id="1Hu-2L-Ohr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5JZ-0L-nQG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E5j-Bc-rnf" customClass="RoundedCornerView" customModule="fastest_world" customModuleProvider="target">
@@ -782,7 +748,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hXd-Ol-XmQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-77" y="725"/>
+            <point key="canvasLocation" x="-79" y="729"/>
         </scene>
         <!--StatsVC-->
         <scene sceneID="xxt-oj-es9">
@@ -793,7 +759,7 @@
                         <viewControllerLayoutGuide type="bottom" id="4Vj-dW-hBv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ktQ-kU-sl3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="laG-Dv-Caw">
@@ -869,7 +835,7 @@
                                         </constraints>
                                         <state key="normal" image="homeAnim1"/>
                                         <connections>
-                                            <segue destination="9oX-75-HHE" kind="show" id="sJ0-NP-boS"/>
+                                            <action selector="returnBtnPressed:" destination="2ZX-AV-EEc" eventType="touchUpInside" id="arD-um-nkS"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -892,6 +858,8 @@
                         <outlet property="homeBtn" destination="tfy-bB-TrG" id="rZq-1c-vih"/>
                         <outlet property="pointsLabel" destination="axs-Ql-3Yv" id="FBk-eQ-78R"/>
                         <outlet property="totalPointsLabel" destination="2DA-Rj-zv4" id="dNF-ee-vrf"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="wUK-MM-VY4"/>
+                        <segue destination="9oX-75-HHE" kind="show" identifier="goToHome" id="yAf-Qm-tAb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c0V-rP-vOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -907,7 +875,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Gsi-8r-BYg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YLJ-kE-IAl" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pointsGraphic" translatesAutoresizingMaskIntoConstraints="NO" id="CAS-d4-BTF">
@@ -974,7 +942,7 @@
                         <viewControllerLayoutGuide type="bottom" id="5jH-rf-eKF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Vim-Id-HdQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="XaK-cV-wz1">
@@ -1072,6 +1040,7 @@
         <image name="lightningPoints" width="27" height="53"/>
         <image name="loginBtn02" width="183" height="69"/>
         <image name="login_x_bar" width="292" height="11"/>
+        <image name="playNow" width="182" height="141"/>
         <image name="pointsGraphic" width="156" height="57"/>
         <image name="powerUp" width="130" height="130"/>
         <image name="purchaseHeader" width="296" height="10"/>
@@ -1089,7 +1058,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sEQ-Zk-ox5"/>
-        <segue reference="Ocl-33-JZp"/>
+        <segue reference="wUK-MM-VY4"/>
+        <segue reference="v6K-1P-zkh"/>
         <segue reference="gm2-rh-NzN"/>
     </inferredMetricsTieBreakers>
 </document>

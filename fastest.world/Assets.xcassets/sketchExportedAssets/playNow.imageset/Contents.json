@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "clock_icon.png",
+      "filename" : "playNow.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "clock_icon@2x.png",
+      "filename" : "playNow@2x.png",
       "scale" : "2x"
     }
   ],
