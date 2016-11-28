@@ -12,6 +12,7 @@ target 'fastest.world' do
   pod 'Firebase/Database'
   pod 'FBSDKLoginKit'
   pod 'SwiftKeychainWrapper'
+  pod 'paper-onboarding'
 
   target 'fastest.worldTests' do
     inherit! :search_paths

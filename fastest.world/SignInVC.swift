@@ -19,7 +19,8 @@ class SignInVC: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        if let _ = KeychainWrapper.defaultKeychainWrapper().stringForKey(KEY_UID) {
+        
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
             print("VIK: Found ID in keychain")
             performSegue(withIdentifier: "goToHome", sender: nil)
         }
@@ -63,8 +64,8 @@ class SignInVC: UIViewController {
                         if snapshot.exists() == true {
                             //user already exists - continue to home page and add to keychain
                             print("VIK: user already exists")
-                            
-                            let keychainResult = KeychainWrapper.defaultKeychainWrapper().setString(uid, forKey: KEY_UID)
+                        
+                            let keychainResult = KeychainWrapper.standard.set(uid, forKey: KEY_UID)
                             print("VIK: Data saved to keychain \(keychainResult)")
                             
                             self.performSegue(withIdentifier: "goToHome", sender: nil)
@@ -82,8 +83,8 @@ class SignInVC: UIViewController {
     func completeSignIn(id: String, userData: Dictionary<String, String> ) {
         //Check if current user exists in db
         DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
-        
-        let keychainResult = KeychainWrapper.defaultKeychainWrapper().setString(id, forKey: KEY_UID)
+
+        let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("VIK: Data saved to keychain \(keychainResult)")
 
         /* The following pulls up the popup to set username*/

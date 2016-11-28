@@ -89,7 +89,7 @@ class EmailSignUpVC: UIViewController {
     
     func completeSignIn(id: String, userData: Dictionary<String, String>) {
         DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
-        let keychainResult = KeychainWrapper.defaultKeychainWrapper().setString(id, forKey: KEY_UID)
+        let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("VIK: Data saved to keychain \(keychainResult)")
         
         /* The following pulls up the popup to set username*/

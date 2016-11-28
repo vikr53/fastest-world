@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		3A4853841CF14B83E5B70EE4 /* Pods_fastest_worldTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA79A3CF4CB89F16B970E4B /* Pods_fastest_worldTests.framework */; };
 		A907A5AB1DA1D1F900192DBD /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A907A5AA1DA1D1F900192DBD /* RoundedCornerView.swift */; };
+		A908C3711DEBD43700C502D2 /* PointerTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = A908C3701DEBD43700C502D2 /* PointerTrail.sks */; };
 		A90B980D1D871DCA0075F342 /* Launch_Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90B980C1D871DCA0075F342 /* Launch_Screen.storyboard */; };
+		A91380F41DE99CEE00BBB674 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91380F31DE99CEE00BBB674 /* OnboardingVC.swift */; };
 		A91DF3301DD99443000F0F19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A91DF32F1DD99443000F0F19 /* GoogleService-Info.plist */; };
 		A924BFE31DACCF46006A4746 /* StatsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A924BFE21DACCF46006A4746 /* StatsVC.swift */; };
 		A931414E1D84C4F000B4AFBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A931414D1D84C4F000B4AFBE /* AppDelegate.swift */; };
@@ -18,6 +20,7 @@
 		A93141561D84C4F000B4AFBE /* fastest_world.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A93141541D84C4F000B4AFBE /* fastest_world.xcdatamodeld */; };
 		A93141581D84C4F000B4AFBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A93141571D84C4F000B4AFBE /* Assets.xcassets */; };
 		A93141661D84C4F000B4AFBE /* fastest_worldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93141651D84C4F000B4AFBE /* fastest_worldTests.swift */; };
+		A93409501DE99F5C00563505 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A934094F1DE99F5C00563505 /* OnboardingView.swift */; };
 		A93BA46E1DA0615C00719710 /* GenElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93BA46D1DA0615C00719710 /* GenElement.swift */; };
 		A94BF7211DC7316000A2F606 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A94BF7201DC7316000A2F606 /* AVFoundation.framework */; };
 		A94BF7231DC7335300A2F606 /* bgMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A94BF7221DC7335300A2F606 /* bgMusic.mp3 */; };
@@ -55,7 +58,9 @@
 		5B2C9BD9132011F4CDE44AB3 /* Pods-fastest.worldTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fastest.worldTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-fastest.worldTests/Pods-fastest.worldTests.release.xcconfig"; sourceTree = "<group>"; };
 		6DA79A3CF4CB89F16B970E4B /* Pods_fastest_worldTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fastest_worldTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A907A5AA1DA1D1F900192DBD /* RoundedCornerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
+		A908C3701DEBD43700C502D2 /* PointerTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PointerTrail.sks; sourceTree = "<group>"; };
 		A90B980C1D871DCA0075F342 /* Launch_Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch_Screen.storyboard; sourceTree = "<group>"; };
+		A91380F31DE99CEE00BBB674 /* OnboardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		A91DF32F1DD99443000F0F19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A924BFE21DACCF46006A4746 /* StatsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsVC.swift; sourceTree = "<group>"; };
 		A931414A1D84C4EF00B4AFBE /* fastest.world.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fastest.world.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +73,7 @@
 		A93141611D84C4F000B4AFBE /* fastest.worldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fastest.worldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A93141651D84C4F000B4AFBE /* fastest_worldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fastest_worldTests.swift; sourceTree = "<group>"; };
 		A93141671D84C4F000B4AFBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A934094F1DE99F5C00563505 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		A93BA46D1DA0615C00719710 /* GenElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenElement.swift; sourceTree = "<group>"; };
 		A94BF7201DC7316000A2F606 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A94BF7221DC7335300A2F606 /* bgMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bgMusic.mp3; path = ../../../Downloads/bgMusic.mp3; sourceTree = "<group>"; };
@@ -128,6 +134,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A908C3511DEADB4C00C502D2 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				A908C3701DEBD43700C502D2 /* PointerTrail.sks */,
+			);
+			name = Particles;
+			sourceTree = "<group>";
+		};
 		A93141411D84C4EF00B4AFBE = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +165,7 @@
 		A931414C1D84C4EF00B4AFBE /* fastest.world */ = {
 			isa = PBXGroup;
 			children = (
+				A908C3511DEADB4C00C502D2 /* Particles */,
 				A94BF7641DC89AE200A2F606 /* GameScene.sks */,
 				A94BF7651DC89AE200A2F606 /* GameScene.swift */,
 				A94BF7661DC89AE200A2F606 /* GameViewController.swift */,
@@ -210,6 +225,8 @@
 				A99BDF311DA9BFCE0026C409 /* LeaderboardVC.swift */,
 				A99BDF331DA9CEF20026C409 /* CustomCell.swift */,
 				A924BFE21DACCF46006A4746 /* StatsVC.swift */,
+				A91380F31DE99CEE00BBB674 /* OnboardingVC.swift */,
+				A934094F1DE99F5C00563505 /* OnboardingView.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -355,6 +372,7 @@
 				A94BF7231DC7335300A2F606 /* bgMusic.mp3 in Resources */,
 				A90B980D1D871DCA0075F342 /* Launch_Screen.storyboard in Resources */,
 				A93141531D84C4F000B4AFBE /* Main.storyboard in Resources */,
+				A908C3711DEBD43700C502D2 /* PointerTrail.sks in Resources */,
 				A94BF7671DC89AE200A2F606 /* GameScene.sks in Resources */,
 				A91DF3301DD99443000F0F19 /* GoogleService-Info.plist in Resources */,
 			);
@@ -474,11 +492,13 @@
 				A9E2C9131DE41E86007086A7 /* fromLeftToRightSegue.swift in Sources */,
 				A94BF7691DC89AE200A2F606 /* GameViewController.swift in Sources */,
 				A93141561D84C4F000B4AFBE /* fastest_world.xcdatamodeld in Sources */,
+				A91380F41DE99CEE00BBB674 /* OnboardingVC.swift in Sources */,
 				A99BDF361DAA07D70026C409 /* leaderboardStyle.swift in Sources */,
 				A94BF7681DC89AE200A2F606 /* GameScene.swift in Sources */,
 				A99BDF341DA9CEF20026C409 /* CustomCell.swift in Sources */,
 				A9A9C84F1DA1738E00B7E71E /* UnamePopUpVC.swift in Sources */,
 				A97670AC1D96621E001CD254 /* EmailSignInVC.swift in Sources */,
+				A93409501DE99F5C00563505 /* OnboardingView.swift in Sources */,
 				A97670B31D98BD90001CD254 /* Constants.swift in Sources */,
 				A99BDF321DA9BFCE0026C409 /* LeaderboardVC.swift in Sources */,
 				A924BFE31DACCF46006A4746 /* StatsVC.swift in Sources */,

@@ -214,7 +214,7 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func signOutTapped(_ sender: AnyObject) {
-        let keychainResult = KeychainWrapper.defaultKeychainWrapper().removeObjectForKey(KEY_UID)
+        let keychainResult = KeychainWrapper.defaultKeychainWrapper.removeObject(forKey: KEY_UID)
         print("VIK: Status of key removal from keychain: \(keychainResult)")
         try! FIRAuth.auth()?.signOut()
         performSegue(withIdentifier: "goToSignIn", sender: nil)

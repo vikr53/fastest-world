@@ -26,7 +26,8 @@ class EmailSignInVC: UIViewController, UITextFieldDelegate {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        if let _ = KeychainWrapper.defaultKeychainWrapper().stringForKey(KEY_UID) {
+        
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
             print("VIK: Found ID in keychain")
             performSegue(withIdentifier: "goToHome", sender: nil)
         }
@@ -111,7 +112,8 @@ class EmailSignInVC: UIViewController, UITextFieldDelegate {
     */
     
     func completeSignIn(id: String) {
-        let keychainResult = KeychainWrapper.defaultKeychainWrapper().setString(id, forKey: KEY_UID)
+        
+        let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("VIK: Data saved to keychain \(keychainResult)")
         performSegue(withIdentifier: "goToHome", sender: nil)
     }

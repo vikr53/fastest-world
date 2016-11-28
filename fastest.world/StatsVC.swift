@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 
-class StatsVC: UIViewController {
+class StatsVC: UIViewController, GADInterstitialDelegate {
     
     @IBOutlet weak var homeBtn: UIButton!
     @IBOutlet weak var pointsLabel: UILabel!
@@ -29,15 +29,6 @@ class StatsVC: UIViewController {
     var scores: [String] = []
     var scoreData: [Int] = []
 
-    override func viewDidAppear(_ animated: Bool) {
-        if shouldDisplayAd {
-            if self.interstitial.isReady {
-                self.interstitial.present(fromRootViewController: self)
-            } else {
-                print("VIK: Add was not ready")
-            }
-        }
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,7 +60,7 @@ class StatsVC: UIViewController {
         
         //determine if ad should be displayed and load or not load the ad
         if shouldDisplayAd {
-            self.createAndLoadInterstitial()
+            interstitial = self.createAndLoadInterstitial()
         }
         
         print("VIK: \(pointsEarned)")
@@ -125,14 +116,18 @@ class StatsVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    private func createAndLoadInterstitial() {
+    private func createAndLoadInterstitial() -> GADInterstitial {
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-6428150896277982/2683783956")
-        let request = GADRequest()
-        request.testDevices = [ kGADSimulatorID ]
-        interstitial.load(request)
+        interstitial.delegate = self
+        interstitial.load(GADRequest())
+        return interstitial
+//        let request = GADRequest()
+//        request.testDevices = [ kGADSimulatorID ]
+//        interstitial.load(request)
     }
     
-    @IBAction func returnBtnPressed(_ sender: AnyObject) {
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        print("VIKi: Entered interstitial dismiss func")
         FIRAuth.auth()?.addStateDidChangeListener { auth, user in
             if let user = user {
                 // User is signed in.
@@ -140,6 +135,36 @@ class StatsVC: UIViewController {
             } else {
                 // No user is signed in.
                 self.performSegue(withIdentifier: "goToSignIn", sender: nil)
+            }
+        }
+    }
+    
+    @IBAction func returnBtnPressed(_ sender: AnyObject) {
+        if shouldDisplayAd {
+            if self.interstitial.isReady {
+                self.interstitial.present(fromRootViewController: self)
+            } else {
+                print("VIK: Ad was not ready")
+                FIRAuth.auth()?.addStateDidChangeListener { auth, user in
+                    if let user = user {
+                        // User is signed in.
+                        self.performSegue(withIdentifier: "goToHome", sender: nil)
+                    } else {
+                        // No user is signed in.
+                        self.performSegue(withIdentifier: "goToSignIn", sender: nil)
+                    }
+                }
+
+            }
+        } else {
+            FIRAuth.auth()?.addStateDidChangeListener { auth, user in
+                if let user = user {
+                    // User is signed in.
+                    self.performSegue(withIdentifier: "goToHome", sender: nil)
+                } else {
+                    // No user is signed in.
+                    self.performSegue(withIdentifier: "goToSignIn", sender: nil)
+                }
             }
         }
     }

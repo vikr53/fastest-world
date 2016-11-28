@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6746E5BCF22E6273EB71921E3A5D5E8A"
+               BlueprintIdentifier = "B6513F6151BB0E4634444359AD102990"
                BuildableName = "Pods_fastest_world.framework"
                BlueprintName = "Pods-fastest.world"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6746E5BCF22E6273EB71921E3A5D5E8A"
+            BlueprintIdentifier = "B6513F6151BB0E4634444359AD102990"
             BuildableName = "Pods_fastest_world.framework"
             BlueprintName = "Pods-fastest.world"
             ReferencedContainer = "container:Pods.xcodeproj">
