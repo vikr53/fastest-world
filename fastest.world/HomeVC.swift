@@ -26,10 +26,13 @@ class HomeVC: UIViewController, GADInterstitialDelegate {
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var lightningBoltView: UIImageView!
     @IBOutlet weak var playDotView: UIImageView!
-    @IBOutlet weak var timeLeftLabel: UILabel!
-    @IBOutlet weak var clockImage: UIImageView!
     @IBOutlet weak var bestScoreLabel: UILabel!
     @IBOutlet weak var userRankLabel: UILabel!
+    @IBOutlet weak var useLightningPtsBtn: UIButton!
+    @IBOutlet weak var orLabel: UILabel!
+    
+    var lightPts: Int = 0
+    var userAttempts: String = "0"
 
     var backgroundMusicPlayer: AVAudioPlayer = AVAudioPlayer()
     let url = Bundle.main.url(forResource: "bgMusic", withExtension: "mp3")
@@ -177,49 +180,63 @@ class HomeVC: UIViewController, GADInterstitialDelegate {
                  }*/
             })
             
-            //Setting attempts
-            refSpecificUser.child("attempts").observe(FIRDataEventType.value, with: { snapshot in
-                if let currentAttempts = snapshot.value as? String {
-                    print("VIK: \(currentAttempts) current attempts")
-                    if Int(currentAttempts)! > 0 {
-                        self.attemptsImageView.image = UIImage(named: "\(currentAttempts)Attempt")
-                        self.attemptsImageView.isHidden = false
-                        print("VIK: changed attemptsImageView")
-                    } else {
-                        //need to buy attempts and the stop-clock should start
-                        //present buy button and the clock - 30 min
-                        self.watchAdBtn.isHidden = false
-                        //disable play btn and change the color of the elements to gray
-                        self.playBtn.isEnabled = false
-                        self.lightningBoltView.image = UIImage(named: "greyLightningBolt")
-                        self.playDotView.image = UIImage(named: "greyDot")
-                        //self.timeLeftFunc()
-                        self.
-                    }
-                    
-                    //stop animating
-                    self.animationViewAttempts.stopAnimating()
-                    self.animationViewAttempts.isHidden = true
-                } else {
-                    print("VIK: Some error occured trying to get the number of attempts left")
-                }
-            })
-            
-            //Setting lighting points - CHANGED from best score
             refSpecificUser.child("lightning_points").observe(FIRDataEventType.value, with: { snapshot in
                 if let lightningPoints = snapshot.value as? Int {
-                    self.userScoreLabel.text = String(lightningPoints)
-                } else {
-                    self.userScoreLabel.text = String(0)
-                }
-                self.userScoreLabel.isHidden = false
-            })
-            
-        })
-        
-        
+                    //exists
+                    self.lightPts = lightningPoints
+                    self.userScoreLabel.text = String(self.lightPts)
+                    self.userScoreLabel.isHidden = false
+                    //check attempts
+                    //Setting attempts
+                    refSpecificUser.child("attempts").observe(FIRDataEventType.value, with: { snapshot in
+                        if let currentAttempts = snapshot.value as? String {
+                            self.userAttempts = currentAttempts
+                            print("VIK: \(currentAttempts) current attempts")
+                            
+                            if Int(self.userAttempts)! > 0 {
+                                self.attemptsImageView.image = UIImage(named: "\(self.userAttempts)Attempt")
+                                self.attemptsImageView.isHidden = false
+                                print("VIK: changed attemptsImageView")
+                            } else {
+                                //need to buy attempts and the stop-clock should start
+                                //present buy button and the clock - 30 min
+                                self.watchAdBtn.isHidden = false
+                                //disable play btn and change the color of the elements to gray
+                                self.playBtn.isEnabled = false
+                                self.lightningBoltView.image = UIImage(named: "greyLightningBolt")
+                                self.playDotView.image = UIImage(named: "greyDot")
+                                //self.timeLeftFunc()
+                                //check if user has enough lightning points
+                                
+                                
+                                //exists - decide whether user can use lightning points
+                                print("VIKo: lightning points - \(self.lightPts)")
+                                if self.lightPts >= 350 {
+                                    self.useLightningPtsBtn.isEnabled = true
+                                } else {
+                                    //set lightning use points to disabled and grey
+                                    self.useLightningPtsBtn.isEnabled = false
+                                    let image = UIImage(named: "greyUseLightningPts") as UIImage?
+                                    self.useLightningPtsBtn.setImage(image, for: .normal)
+                                }
+                                
+                                self.useLightningPtsBtn.isHidden = false
+                                self.orLabel.isHidden = false
+                            }
 
-        // Do any additional setup after loading the view.
+                            //stop animating
+                            self.animationViewAttempts.stopAnimating()
+                            self.animationViewAttempts.isHidden = true
+                        } else {
+                            print("VIK: Some error occured trying to get the number of attempts left")
+                        }
+                    })
+                } else {
+                    self.userScoreLabel.text = String(self.lightPts)
+                    self.userScoreLabel.isHidden = false
+                }
+            })
+        })
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -278,10 +295,29 @@ class HomeVC: UIViewController, GADInterstitialDelegate {
             self.interstitial.present(fromRootViewController: self)
             //endTimer and add attempts
             self.timeLeft = -1
-            updateAttemptsClockTimer()
+            //updateAttemptsClockTimer()
         } else {
             print("VIK: Add was not ready")
         }
+        
+        //change the stuff graphics in attempts box
+        self.watchAdBtn.isHidden = true
+        
+        let refUsers : FIRDatabaseReference = FIRDatabase.database().reference().child("users").child(uid!)
+        
+        let userData2: Dictionary<String, String> = ["attempts": "5"]
+        refUsers.updateChildValues(userData2)
+        
+        self.useLightningPtsBtn.isHidden = true
+        self.orLabel.isHidden = true
+        self.watchAdBtn.isHidden = true
+        
+        self.attemptsImageView.image = UIImage(named: "5Attempt")
+        self.attemptsImageView.isHidden = false
+        
+        self.playBtn.isEnabled = true
+        self.lightningBoltView.image = UIImage(named: "lightningBolt")
+        self.playDotView.image = UIImage(named: "yellowDot")
     }
 
     
@@ -356,6 +392,7 @@ class HomeVC: UIViewController, GADInterstitialDelegate {
 //        }
 //    }
     
+    
     private func createAndLoadInterstitial() {
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-6428150896277982/4402692751")
         let request = GADRequest()
@@ -363,6 +400,32 @@ class HomeVC: UIViewController, GADInterstitialDelegate {
         interstitial.load(request)
     }
     
+    @IBAction func useLightningPtsTapped(_ sender: Any) {
+        //change lightning points in database
+        let newLightPts: Int = lightPts - 350
+        
+        let userLightningPtsChanged = ["lightning_points": newLightPts]
+        FIRDatabase.database().reference().child("users").child(uid!).updateChildValues(userLightningPtsChanged)
+        
+        //change the stuff graphics in attempts box
+        self.watchAdBtn.isHidden = true
+        
+        let refUsers : FIRDatabaseReference = FIRDatabase.database().reference().child("users").child(uid!)
+        
+        let userData2: Dictionary<String, String> = ["attempts": "5"]
+        refUsers.updateChildValues(userData2)
+        
+        self.useLightningPtsBtn.isHidden = true
+        self.orLabel.isHidden = true
+        self.watchAdBtn.isHidden = true
+        
+        self.attemptsImageView.image = UIImage(named: "5Attempt")
+        self.attemptsImageView.isHidden = false
+        
+        self.playBtn.isEnabled = true
+        self.lightningBoltView.image = UIImage(named: "lightningBolt")
+        self.playDotView.image = UIImage(named: "yellowDot")
+    }
     /*
     // MARK: - Navigation
 
