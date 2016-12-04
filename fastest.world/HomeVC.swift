@@ -12,10 +12,9 @@ import SwiftKeychainWrapper
 import Foundation
 import AVFoundation
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, GADInterstitialDelegate {
 
     @IBOutlet weak var unameLabel: UILabel!
-    @IBOutlet weak var rankLabel: UILabel!
     @IBOutlet weak var userScoreLabel: UILabel!
     @IBOutlet weak var attemptsImageView: UIImageView!
     @IBOutlet weak var medalImageView: UIImageView!
@@ -30,6 +29,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var timeLeftLabel: UILabel!
     @IBOutlet weak var clockImage: UIImageView!
     @IBOutlet weak var bestScoreLabel: UILabel!
+    @IBOutlet weak var userRankLabel: UILabel!
 
     var backgroundMusicPlayer: AVAudioPlayer = AVAudioPlayer()
     let url = Bundle.main.url(forResource: "bgMusic", withExtension: "mp3")
@@ -81,7 +81,7 @@ class HomeVC: UIViewController {
                 print("There are \(snapshot.childrenCount) scores")
                 let enumerator = snapshot.children
                 var rankCounter = 0
-    
+                
                 //check if already add and act accordingly
                 print("VIK2: \(self.dbUname) -> self.dbUname")
                 print("VIK2: score = \((snapshot.value as? NSDictionary)?[self.dbUname])")
@@ -102,19 +102,26 @@ class HomeVC: UIViewController {
                         let convertedScore = -(score.value! as! Int)
                         print("VIK: \(score.key)")
                         print("VIK: \(convertedScore)")
-                        self.userScoreLabel.text = String(convertedScore)
+                        self.bestScoreLabel.text = String(convertedScore)
                         
                         //stop animating
                         self.animationViewPoints.stopAnimating()
                         self.animationViewPoints.isHidden = true
                         
-                        self.userScoreLabel.isHidden = false
+                        self.bestScoreLabel.isHidden = false
                         
                         print("VIK: User rank is \(rankCounter)")
                         self.rank = rankCounter
-                        
                     }
                 }
+                
+                /*
+                 Yellow - UIColor(red:0.99, green:0.91, blue:0.36, alpha:1.0)
+                 Orange - UIColor(red:0.98, green:0.47, blue:0.31, alpha:1.0)
+                 Blue - UIColor(red:0.29, green:0.57, blue:0.87, alpha:1.0)
+                 Dark Gray Background - UIColor(red:0.16, green:0.16, blue:0.16, alpha:1.0)
+                 */
+                
                 //give appropriate medal
                 if (self.rank > 0) && (self.rank <= 10) {
                     print("VIK: User has earned a blue medal")
@@ -126,6 +133,11 @@ class HomeVC: UIViewController {
                     //stop animating
                     self.animationView.stopAnimating()
                     self.animationView.isHidden = true
+                    
+                    //set rank number
+                    self.userRankLabel.text = String(self.rank)
+                    self.userRankLabel.textColor = UIColor(red:0.29, green:0.57, blue:0.87, alpha:1.0)
+                    self.userRankLabel.isHidden = false
                 } else if (self.rank <= 100) && (self.rank >= 10) {
                     print("VIK: User has earned a orange medal")
                     self.medalImageView.image = UIImage(named: "orangeBadge")
@@ -136,6 +148,11 @@ class HomeVC: UIViewController {
                     //stop animating
                     self.animationView.stopAnimating()
                     self.animationView.isHidden = true
+                    
+                    //set rank number
+                    self.userRankLabel.text = String(self.rank)
+                    self.userRankLabel.textColor = UIColor(red:0.98, green:0.47, blue:0.31, alpha:1.0)
+                    self.userRankLabel.isHidden = false
                 } else {
                     print("VIK: User has earned an yellow medal")
                     self.medalImageView.image = UIImage(named: "yellowBadge")
@@ -146,6 +163,11 @@ class HomeVC: UIViewController {
                     //stop animating
                     self.animationView.stopAnimating()
                     self.animationView.isHidden = true
+                    
+                    //set rank number
+                    self.userRankLabel.text = String(self.rank)
+                    self.userRankLabel.textColor = UIColor(red:0.99, green:0.91, blue:0.36, alpha:1.0)
+                    self.userRankLabel.isHidden = false
                 }
                 /*for child in snapshot.children {
                  if let score = child.value(forKey: uid!) as! [FIRDataSnapshot] {
@@ -171,7 +193,8 @@ class HomeVC: UIViewController {
                         self.playBtn.isEnabled = false
                         self.lightningBoltView.image = UIImage(named: "greyLightningBolt")
                         self.playDotView.image = UIImage(named: "greyDot")
-                        self.timeLeftFunc()
+                        //self.timeLeftFunc()
+                        self.
                     }
                     
                     //stop animating
@@ -182,15 +205,19 @@ class HomeVC: UIViewController {
                 }
             })
             
-            //Setting best score
-            refSpecificUser.child("best_score").observe(FIRDataEventType.value, with: { snapshot in
-                if let bestScore = snapshot.value as? Int {
-                    self.bestScoreLabel.text = String(bestScore)
-                    self.bestScoreLabel.isHidden = false
+            //Setting lighting points - CHANGED from best score
+            refSpecificUser.child("lightning_points").observe(FIRDataEventType.value, with: { snapshot in
+                if let lightningPoints = snapshot.value as? Int {
+                    self.userScoreLabel.text = String(lightningPoints)
+                } else {
+                    self.userScoreLabel.text = String(0)
                 }
+                self.userScoreLabel.isHidden = false
             })
             
         })
+        
+        
 
         // Do any additional setup after loading the view.
     }
@@ -239,8 +266,15 @@ class HomeVC: UIViewController {
         }
     }
     
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        //play music once again
+        backgroundMusicPlayer.play()
+    }
+    
     @IBAction func watchAdBtnTapped(_ sender: AnyObject) {
         if self.interstitial.isReady {
+            //pause music
+            backgroundMusicPlayer.pause()
             self.interstitial.present(fromRootViewController: self)
             //endTimer and add attempts
             self.timeLeft = -1
@@ -251,76 +285,76 @@ class HomeVC: UIViewController {
     }
 
     
-    func timeLeftFunc() {
-        let refSpecificUser : FIRDatabaseReference = FIRDatabase.database().reference().child("users").child(uid!)
-        
-        //check if time left already exists
-        let timeNow = UInt64(floor(NSDate().timeIntervalSince1970))
-        refSpecificUser.child("timeWhenDone").observeSingleEvent(of: .value, with: { snapshot in
-            if let dBRetTimeWhenDone = snapshot.value as? Int {
-                //exists
-                self.timeLeft = dBRetTimeWhenDone - Int(timeNow)
-                print("VIK3: timeLeft = \(self.timeLeft)")
-                //Start timer
-                self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(HomeVC.updateAttemptsClockTimer), userInfo: nil, repeats: true)
-            } else {
-                //it does not exist and should be created
-                self.timeLeft = (60*30)
-                let timeWhenDone = timeNow + (60*30)
-                print("VIK3: \(timeNow)")
-                //update timeWhenDone in db
-                let userData: Dictionary<String, Int> = ["timeWhenDone": Int(timeWhenDone)]
-                refSpecificUser.updateChildValues(userData)
-                //Start timer
-                self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(HomeVC.updateAttemptsClockTimer), userInfo: nil, repeats: true)
-            }
-        })
-        
-        
-    }
-    
-    func updateAttemptsClockTimer() {
-        if self.timeLeft > 0 {
-            //time is not up - stopwatch setup
-            self.timeLeft = self.timeLeft - 1
-            let minutes: Int = self.timeLeft/60
-            let seconds: Int = self.timeLeft - (minutes * 60)
-            let formattedMinutes = String(format: "%02d", minutes)
-            let formattedSeconds = String(format: "%02d", seconds)
-            print("VIK3: Minutes - \(formattedMinutes) Seconds - \(formattedSeconds)")
-            self.timeLeftLabel.text = "00:\(formattedMinutes):\(formattedSeconds)"
-            self.timeLeftLabel.isHidden = false
-            self.clockImage.isHidden = false
-        } else {
-            //time is up!
-            /*
-             1. timer invalidate
-             2. Add 5 attempts
-             3. Hide Clock, Label and button
-             4. Show attempts image
-             5. Enable the button/Change its color
-             6. Remove timeWhenDone child
-             */
-            self.timer.invalidate()
-            
-            let refUsers : FIRDatabaseReference = FIRDatabase.database().reference().child("users").child(uid!)
-            let userData2: Dictionary<String, String> = ["attempts": "5"]
-            refUsers.updateChildValues(userData2)
-            
-            self.clockImage.isHidden = true
-            self.timeLeftLabel.isHidden = true
-            self.watchAdBtn.isHidden = true
-            
-            self.attemptsImageView.image = UIImage(named: "5Attempt")
-            self.attemptsImageView.isHidden = false
-            
-            self.playBtn.isEnabled = true
-            self.lightningBoltView.image = UIImage(named: "lightningBolt")
-            self.playDotView.image = UIImage(named: "yellowDot")
-            
-            refUsers.child("timeWhenDone").removeValue()
-        }
-    }
+//    func timeLeftFunc() {
+//        let refSpecificUser : FIRDatabaseReference = FIRDatabase.database().reference().child("users").child(uid!)
+//        
+//        //check if time left already exists
+//        let timeNow = UInt64(floor(NSDate().timeIntervalSince1970))
+//        refSpecificUser.child("timeWhenDone").observeSingleEvent(of: .value, with: { snapshot in
+//            if let dBRetTimeWhenDone = snapshot.value as? Int {
+//                //exists
+//                self.timeLeft = dBRetTimeWhenDone - Int(timeNow)
+//                print("VIK3: timeLeft = \(self.timeLeft)")
+//                //Start timer
+//                self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(HomeVC.updateAttemptsClockTimer), userInfo: nil, repeats: true)
+//            } else {
+//                //it does not exist and should be created
+//                self.timeLeft = (60*30)
+//                let timeWhenDone = timeNow + (60*30)
+//                print("VIK3: \(timeNow)")
+//                //update timeWhenDone in db
+//                let userData: Dictionary<String, Int> = ["timeWhenDone": Int(timeWhenDone)]
+//                refSpecificUser.updateChildValues(userData)
+//                //Start timer
+//                self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(HomeVC.updateAttemptsClockTimer), userInfo: nil, repeats: true)
+//            }
+//        })
+//        
+//        
+//    }
+//    
+//    func updateAttemptsClockTimer() {
+//        if self.timeLeft > 0 {
+//            //time is not up - stopwatch setup
+//            self.timeLeft = self.timeLeft - 1
+//            let minutes: Int = self.timeLeft/60
+//            let seconds: Int = self.timeLeft - (minutes * 60)
+//            let formattedMinutes = String(format: "%02d", minutes)
+//            let formattedSeconds = String(format: "%02d", seconds)
+//            print("VIK3: Minutes - \(formattedMinutes) Seconds - \(formattedSeconds)")
+//            self.timeLeftLabel.text = "00:\(formattedMinutes):\(formattedSeconds)"
+//            self.timeLeftLabel.isHidden = false
+//            self.clockImage.isHidden = false
+//        } else {
+//            //time is up!
+//            /*
+//             1. timer invalidate
+//             2. Add 5 attempts
+//             3. Hide Clock, Label and button
+//             4. Show attempts image
+//             5. Enable the button/Change its color
+//             6. Remove timeWhenDone child
+//             */
+//            self.timer.invalidate()
+//            
+//            let refUsers : FIRDatabaseReference = FIRDatabase.database().reference().child("users").child(uid!)
+//            let userData2: Dictionary<String, String> = ["attempts": "5"]
+//            refUsers.updateChildValues(userData2)
+//            
+//            self.clockImage.isHidden = true
+//            self.timeLeftLabel.isHidden = true
+//            self.watchAdBtn.isHidden = true
+//            
+//            self.attemptsImageView.image = UIImage(named: "5Attempt")
+//            self.attemptsImageView.isHidden = false
+//            
+//            self.playBtn.isEnabled = true
+//            self.lightningBoltView.image = UIImage(named: "lightningBolt")
+//            self.playDotView.image = UIImage(named: "yellowDot")
+//            
+//            refUsers.child("timeWhenDone").removeValue()
+//        }
+//    }
     
     private func createAndLoadInterstitial() {
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-6428150896277982/4402692751")

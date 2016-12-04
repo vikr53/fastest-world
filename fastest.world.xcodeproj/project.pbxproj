@@ -10,6 +10,8 @@
 		3A4853841CF14B83E5B70EE4 /* Pods_fastest_worldTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DA79A3CF4CB89F16B970E4B /* Pods_fastest_worldTests.framework */; };
 		A907A5AB1DA1D1F900192DBD /* RoundedCornerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A907A5AA1DA1D1F900192DBD /* RoundedCornerView.swift */; };
 		A908C3711DEBD43700C502D2 /* PointerTrail.sks in Resources */ = {isa = PBXBuildFile; fileRef = A908C3701DEBD43700C502D2 /* PointerTrail.sks */; };
+		A908C3731DEC36A300C502D2 /* CGFloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A908C3721DEC36A300C502D2 /* CGFloatExtension.swift */; };
+		A908C3751DEC8DB600C502D2 /* PointerTrailBlue.sks in Resources */ = {isa = PBXBuildFile; fileRef = A908C3741DEC8DB500C502D2 /* PointerTrailBlue.sks */; };
 		A90B980D1D871DCA0075F342 /* Launch_Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A90B980C1D871DCA0075F342 /* Launch_Screen.storyboard */; };
 		A91380F41DE99CEE00BBB674 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91380F31DE99CEE00BBB674 /* OnboardingVC.swift */; };
 		A91DF3301DD99443000F0F19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A91DF32F1DD99443000F0F19 /* GoogleService-Info.plist */; };
@@ -59,6 +61,8 @@
 		6DA79A3CF4CB89F16B970E4B /* Pods_fastest_worldTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fastest_worldTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A907A5AA1DA1D1F900192DBD /* RoundedCornerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedCornerView.swift; sourceTree = "<group>"; };
 		A908C3701DEBD43700C502D2 /* PointerTrail.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PointerTrail.sks; sourceTree = "<group>"; };
+		A908C3721DEC36A300C502D2 /* CGFloatExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloatExtension.swift; sourceTree = "<group>"; };
+		A908C3741DEC8DB500C502D2 /* PointerTrailBlue.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = PointerTrailBlue.sks; sourceTree = "<group>"; };
 		A90B980C1D871DCA0075F342 /* Launch_Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch_Screen.storyboard; sourceTree = "<group>"; };
 		A91380F31DE99CEE00BBB674 /* OnboardingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		A91DF32F1DD99443000F0F19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				A908C3701DEBD43700C502D2 /* PointerTrail.sks */,
+				A908C3741DEC8DB500C502D2 /* PointerTrailBlue.sks */,
 			);
 			name = Particles;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				A97670B71D990BE7001CD254 /* DataService.swift */,
+				A908C3721DEC36A300C502D2 /* CGFloatExtension.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -368,6 +374,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A908C3751DEC8DB600C502D2 /* PointerTrailBlue.sks in Resources */,
 				A93141581D84C4F000B4AFBE /* Assets.xcassets in Resources */,
 				A94BF7231DC7335300A2F606 /* bgMusic.mp3 in Resources */,
 				A90B980D1D871DCA0075F342 /* Launch_Screen.storyboard in Resources */,
@@ -495,6 +502,7 @@
 				A91380F41DE99CEE00BBB674 /* OnboardingVC.swift in Sources */,
 				A99BDF361DAA07D70026C409 /* leaderboardStyle.swift in Sources */,
 				A94BF7681DC89AE200A2F606 /* GameScene.swift in Sources */,
+				A908C3731DEC36A300C502D2 /* CGFloatExtension.swift in Sources */,
 				A99BDF341DA9CEF20026C409 /* CustomCell.swift in Sources */,
 				A9A9C84F1DA1738E00B7E71E /* UnamePopUpVC.swift in Sources */,
 				A97670AC1D96621E001CD254 /* EmailSignInVC.swift in Sources */,

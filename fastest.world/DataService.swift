@@ -61,10 +61,48 @@ class DataService {
         })*/
     
         //get current points
+        /* 1. check if score is there 
+         2. simply update no need of adding dbRetreivedPoints*/
         self._REF_SCORES.observeSingleEvent(of: .value, with: { snapshot in
             print("VIK: entered the update points db check")
             print("VIK2: \((snapshot.value as? NSDictionary)?[uname])")
             if let dbPoints = (snapshot.value as? NSDictionary)?[uname] as? Int {
+                print("VIKo: uname - \(uname)")
+                print("VIKo: dpPoints - \(dbPoints)")
+                //Setting Points - Username
+                if -dbPoints < points {
+                    //update score
+                    let updatedScoreData2: Dictionary<String, Int> = [uname: -points]
+                    self._REF_SCORES.updateChildValues(updatedScoreData2)
+                    print("updated scores")
+                } else {
+                    //do nothing
+                    print("Not high enough to change")
+                }
+            } else {
+                //not there
+                let updatedScoreData = [String(uname): 0]
+                self._REF_BASE.child("scores").updateChildValues(updatedScoreData)
+                print("created scores")
+            }
+            
+//            //update scores branch
+//            print("VIK2: points earned = \(points)")
+//            //CHANGED - from updating by adding points to dbRetreivedPoints
+//            let updatedPoints: Int = -points
+//            print("VIK2: Updated points \(updatedPoints)")
+//            print("VIK2: \(uname)")
+//            let userData2: Dictionary<String, Int> = [String(uname): updatedPoints]
+//            self._REF_BASE.child("scores").updateChildValues(userData2)
+//            print("VIK2: Updated scores child")
+         })
+        
+        //update best scores
+        /* 1. change child to lightning points
+         2. update by adding to existing*/
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        self._REF_USERS.child(uid!).child("lightning_points").observeSingleEvent(of: .value, with: { snapshot in
+            if let dbPoints = snapshot.value as? Int {
                 //Setting Points - Username
                 print("VIK2: dbPoints \(dbPoints)")
                 dbRetreivedPoints = dbPoints
@@ -77,31 +115,12 @@ class DataService {
             
             //update scores branch
             print("VIK2: points earned = \(points)")
-            let updatedPoints: Int = -points + dbRetreivedPoints
+            let updatedPoints: Int = points + dbRetreivedPoints
             print("VIK2: Updated points \(updatedPoints)")
             print("VIK2: \(uname)")
-            let userData2: Dictionary<String, Int> = [String(uname): updatedPoints]
-            self._REF_BASE.child("scores").updateChildValues(userData2)
-            print("VIK2: Updated scores child")
-         })
-        
-        //update best scores
-        let uid = FIRAuth.auth()?.currentUser?.uid
-        self._REF_USERS.child(uid!).child("best_score").observeSingleEvent(of: .value, with: { snapshot in
-            if let bestScore = snapshot.value as? Int {
-                if bestScore < points {
-                    //update best score
-                    let updatedScoreData = ["best_score": points]
-                    self._REF_USERS.child(uid!).updateChildValues(updatedScoreData)
-                } else {
-                    //do nothing
-                    print("Not high enough to change")
-                }
-            } else {
-                // best score child does not exist
-                let createNewBestScoreData = ["best_score": points]
-                self._REF_USERS.child(uid!).updateChildValues(createNewBestScoreData)
-            }
+            let userData2: Dictionary<String, Int> = ["lightning_points": updatedPoints]
+            self._REF_USERS.child(uid!).updateChildValues(userData2)
+            print("VIK2: Updated lightning points child")
         })
     }
     

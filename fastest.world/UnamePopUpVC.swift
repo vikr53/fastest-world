@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class UnamePopUpVC: UIViewController {
+class UnamePopUpVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var unameField: UITextField!
     @IBOutlet weak var errorMsgField: UILabel!
@@ -25,6 +25,8 @@ class UnamePopUpVC: UIViewController {
 
         // Do any additional setup after loading the view.
         self.unameField.text = FIRAuth.auth()?.currentUser?.displayName
+        
+        self.unameField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -76,7 +78,14 @@ class UnamePopUpVC: UIViewController {
         textField.layer.borderWidth = 0.0
     }
 
-
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     /*
     // MARK: - Navigation

@@ -24,7 +24,9 @@ class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        ref.child("scores").queryOrderedByValue().queryLimited(toFirst: 100).observe(.value, with: { snapshot in
+        ref.child("scores").queryOrderedByValue().queryLimited(toFirst: 200).observe(.value, with: { snapshot in
+            self.unames = []
+            self.scores = []
             print("VIKl: There are \(snapshot.childrenCount) scores")
             let enumerator = snapshot.children
             var count: Int = 0
@@ -98,9 +100,12 @@ class LeaderboardVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             
             cell.userRank.text = String(indexPath.row + 1)
             cell.userRank.textColor = UIColor.yellow
+            cellBorderColor = UIColor(red:0.99, green:0.91, blue:0.36, alpha:1.0)
         }
         
         if receivedUname == unames[indexPath.row] {
+            //found user
+            //change cell border
             cell.layer.borderColor = cellBorderColor.cgColor
             cell.layer.borderWidth = 2.0
         } else {

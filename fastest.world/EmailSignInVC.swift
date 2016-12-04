@@ -125,5 +125,10 @@ class EmailSignInVC: UIViewController, UITextFieldDelegate {
         textField.backgroundColor = UIColor(red:1.00, green:0.30, blue:0.30, alpha:1.0)
         textField.textColor = UIColor.white
     }
+    
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
 }

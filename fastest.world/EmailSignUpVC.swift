@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import SwiftKeychainWrapper
 
-class EmailSignUpVC: UIViewController {
+class EmailSignUpVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var errorMessage: UILabel!
     @IBOutlet weak var emailField: UITextField!
@@ -23,6 +23,10 @@ class EmailSignUpVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        emailField.delegate = self
+        pwdField.delegate = self
+        pwdConfirmField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -171,5 +175,14 @@ class EmailSignUpVC: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
 }
