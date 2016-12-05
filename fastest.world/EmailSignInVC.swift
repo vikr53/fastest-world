@@ -40,8 +40,8 @@ class EmailSignInVC: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
+        textField.resignFirstResponder()
+        return true
     }
     
     func pwdtextFieldDidChange (_ textField: UITextField){

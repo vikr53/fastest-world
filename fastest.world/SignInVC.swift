@@ -14,6 +14,12 @@ import SwiftKeychainWrapper
 
 class SignInVC: UIViewController {
     
+    @IBOutlet weak var playNowBtn: UIButton!
+    @IBOutlet var signInView: UIView!
+    @IBOutlet weak var emailBtn: UIButton!
+   
+    @IBOutlet weak var fbBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -24,6 +30,7 @@ class SignInVC: UIViewController {
             print("VIK: Found ID in keychain")
             performSegue(withIdentifier: "goToHome", sender: nil)
         }
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,15 +42,30 @@ class SignInVC: UIViewController {
         
         let facebookLogin = FBSDKLoginManager()
         
+        self.emailBtn.isEnabled = false
+        self.playNowBtn.isEnabled = false
+        self.fbBtn.isEnabled = false
+        
         facebookLogin.logIn(withReadPermissions: ["email"], from: self) { (result, error) in
             if error != nil {
                 print("VIK: Unable to authenticate with Facebook - \(error)")
+                
+                self.emailBtn.isEnabled = true
+                self.playNowBtn.isEnabled = true
+                self.fbBtn.isEnabled = true
+                
             } else if result?.isCancelled == true {
                 print("VIK: User cancelled Facebook Authentication")
+                
+                self.emailBtn.isEnabled = true
+                self.playNowBtn.isEnabled = true
+                self.fbBtn.isEnabled = true
+                
             } else {
                 print("VIK: Successfully authenticate with Facebook")
                 let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 self.firebaseAuth(credential)
+                
             }
         }
         
@@ -71,7 +93,7 @@ class SignInVC: UIViewController {
                             self.performSegue(withIdentifier: "goToHome", sender: nil)
                         } else {
                             //user does not exist - create one
-                            let userData = ["uname": user.displayName!, "provider": credential.provider, "attempts" : String(5)]
+                            let userData = ["provider": credential.provider, "attempts" : String(5)]
                             self.completeSignIn(id: user.uid, userData: userData)
                         }
                     })
